@@ -11,31 +11,38 @@ object formularioPrincipal: TformularioPrincipal
   object menuPrincipal: TMainMenu
     left = 216
     top = 168
-    object MenuItem1: TMenuItem
+    object MenuArchivo: TMenuItem
       Caption = '&Archivo'
-      object OptionItem0101: TMenuItem
+      object OptionItemAyuda: TMenuItem
         Caption = '&Ayuda'
         ShortCut = 112
       end
       object MenuItem3: TMenuItem
         Caption = '-'
       end
-      object OptionItem0102: TMenuItem
+      object OptionItemImpresora: TMenuItem
         Caption = 'Configurar &Impresora'
       end
       object MenuItem4: TMenuItem
         Caption = '-'
       end
-      object OptionItem0103: TMenuItem
+      object OptionItemAcercade: TMenuItem
         Caption = 'Acerca &de...'
       end
       object MenuItem5: TMenuItem
         Caption = '-'
       end
-      object OptionItem0104: TMenuItem
+      object OptionItemSalir: TMenuItem
         Caption = '&Salir'
         ShortCut = 32883
-        OnClick = OptionItem0104Click
+        OnClick = OptionItemSalirClick
+      end
+    end
+    object MenuMaestros: TMenuItem
+      Caption = '&Maestros'
+      object OpcionItemCompanias: TMenuItem
+        Caption = '&Compañías'
+        OnClick = OpcionItemCompaniasClick
       end
     end
   end

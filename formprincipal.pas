@@ -5,23 +5,27 @@ unit formPrincipal;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
+  formCompanias;
 
 type
 
   { TformularioPrincipal }
 
   TformularioPrincipal = class(TForm)
-    MenuItem1: TMenuItem;
+    MenuArchivo: TMenuItem;
+    MenuMaestros: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
     MenuItem5: TMenuItem;
-    OptionItem0104: TMenuItem;
-    OptionItem0103: TMenuItem;
-    OptionItem0102: TMenuItem;
-    OptionItem0101: TMenuItem;
+    OpcionItemCompanias: TMenuItem;
+    OptionItemSalir: TMenuItem;
+    OptionItemAcercade: TMenuItem;
+    OptionItemImpresora: TMenuItem;
+    OptionItemAyuda: TMenuItem;
     menuPrincipal: TMainMenu;
-    procedure OptionItem0104Click(Sender: TObject);
+    procedure OpcionItemCompaniasClick(Sender: TObject);
+    procedure OptionItemSalirClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -37,9 +41,14 @@ implementation
 
 { TformularioPrincipal }
 
-procedure TformularioPrincipal.OptionItem0104Click(Sender: TObject);
+procedure TformularioPrincipal.OptionItemSalirClick(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TformularioPrincipal.OpcionItemCompaniasClick(Sender: TObject);
+begin
+  formularioCompanias.Show;
 end;
 
 end.

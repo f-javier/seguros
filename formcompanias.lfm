@@ -1,0 +1,8 @@
+inherited formularioCompanias: TformularioCompanias
+  Caption = 'Compañías'
+  inherited PanelBotonera: TPanel
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = (      )
+    end
+  end
+end
