@@ -50,6 +50,7 @@
         <Filename Value="formpadre.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="formularioPadre"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit2>
     </Units>

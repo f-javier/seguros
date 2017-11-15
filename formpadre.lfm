@@ -11,17 +11,17 @@ object formularioPadre: TformularioPadre
   LCLVersion = '1.6.4.0'
   object PanelBotonera: TPanel
     Left = 0
-    Height = 50
+    Height = 40
     Top = 0
     Width = 636
     Align = alTop
-    ClientHeight = 50
+    ClientHeight = 40
     ClientWidth = 636
     TabOrder = 0
     object DBNavigator1: TDBNavigator
       Left = 10
       Height = 32
-      Top = 8
+      Top = 3
       Width = 201
       BevelOuter = bvNone
       ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -39,7 +39,7 @@ object formularioPadre: TformularioPadre
     object sbBuscar: TSpeedButton
       Left = 256
       Height = 32
-      Top = 8
+      Top = 3
       Width = 32
       Glyph.Data = {
         36040000424D3604000000000000360000002800000010000000100000000100
@@ -81,7 +81,7 @@ object formularioPadre: TformularioPadre
     object sbImprimir: TSpeedButton
       Left = 296
       Height = 32
-      Top = 8
+      Top = 3
       Width = 32
       Glyph.Data = {
         36040000424D3604000000000000360000002800000010000000100000000100
@@ -123,7 +123,7 @@ object formularioPadre: TformularioPadre
     object sbSalir: TSpeedButton
       Left = 370
       Height = 32
-      Top = 8
+      Top = 3
       Width = 32
       Glyph.Data = {
         36040000424D3604000000000000360000002800000010000000100000000100
