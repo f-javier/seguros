@@ -1,8 +1,1179 @@
 inherited formularioCompanias: TformularioCompanias
+  Height = 442
+  Width = 585
   Caption = 'Compañías'
+  ClientHeight = 442
+  ClientWidth = 585
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDeactivate = FormDeactivate
   inherited PanelBotonera: TPanel
+    Width = 585
+    ClientWidth = 585
     inherited DBNavigator1: TDBNavigator
+      DataSource = dsCompanias
       Hints.Strings = (      )
+    end
+    inherited sbSalir: TSpeedButton
+      Left = 544
+    end
+  end
+  object Panel1: TPanel[1]
+    Left = 0
+    Height = 402
+    Top = 40
+    Width = 585
+    Align = alClient
+    ClientHeight = 402
+    ClientWidth = 585
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 31
+      Height = 13
+      Top = 24
+      Width = 18
+      Caption = 'Id.:'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 160
+      Height = 13
+      Top = 24
+      Width = 41
+      Caption = 'Nombre:'
+      ParentColor = False
+    end
+    object dbeId: TDBEdit
+      Left = 56
+      Height = 21
+      Top = 19
+      Width = 48
+      DataField = 'id'
+      DataSource = dsCompanias
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = clSilver
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object dbeNombre: TDBEdit
+      Left = 208
+      Height = 21
+      Top = 19
+      Width = 336
+      DataField = 'nombre'
+      DataSource = dsCompanias
+      CharCase = ecUppercase
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object pc: TPageControl
+      Left = 8
+      Height = 344
+      Top = 48
+      Width = 568
+      ActivePage = tsDatos
+      TabIndex = 0
+      TabOrder = 2
+      object tsDatos: TTabSheet
+        Caption = 'Datos'
+        ClientHeight = 318
+        ClientWidth = 560
+        object Label3: TLabel
+          Left = 32
+          Height = 13
+          Top = 21
+          Width = 43
+          Caption = 'Dirección'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 32
+          Height = 13
+          Top = 48
+          Width = 45
+          Caption = 'Población'
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 32
+          Height = 13
+          Top = 76
+          Width = 43
+          Caption = 'Provincia'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 32
+          Height = 13
+          Top = 104
+          Width = 47
+          Caption = 'Teléfonos'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 352
+          Height = 13
+          Top = 104
+          Width = 18
+          Caption = 'Fax'
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 32
+          Height = 13
+          Top = 132
+          Width = 24
+          Caption = 'Email'
+          ParentColor = False
+        end
+        object Label9: TLabel
+          Left = 32
+          Height = 13
+          Top = 160
+          Width = 47
+          Caption = 'Pág. Web'
+          ParentColor = False
+        end
+        object Label10: TLabel
+          Left = 32
+          Height = 13
+          Top = 188
+          Width = 113
+          Caption = 'Teléfonos de Asistencia'
+          ParentColor = False
+        end
+        object dbeDireccion: TDBEdit
+          Left = 90
+          Height = 21
+          Top = 16
+          Width = 424
+          DataField = 'direccion'
+          DataSource = dsCompanias
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object dbeCodigoPostal: TDBEdit
+          Left = 90
+          Height = 21
+          Top = 44
+          Width = 46
+          DataField = 'codigopostal'
+          DataSource = dsCompanias
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object dbePoblacion: TDBEdit
+          Left = 152
+          Height = 21
+          Top = 44
+          Width = 360
+          DataField = 'poblacion'
+          DataSource = dsCompanias
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object DBLookupComboBox1: TDBLookupComboBox
+          Left = 90
+          Height = 21
+          Top = 72
+          Width = 188
+          ListFieldIndex = 0
+          LookupCache = False
+          TabOrder = 3
+        end
+        object dbeTelefono1: TDBEdit
+          Left = 90
+          Height = 21
+          Top = 99
+          Width = 110
+          DataField = 'telefono1'
+          DataSource = dsCompanias
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object dbeTelefono2: TDBEdit
+          Left = 216
+          Height = 21
+          Top = 99
+          Width = 110
+          DataField = 'telefono2'
+          DataSource = dsCompanias
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
+        end
+        object dbeFax: TDBEdit
+          Left = 384
+          Height = 21
+          Top = 99
+          Width = 110
+          DataField = 'fax'
+          DataSource = dsCompanias
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 6
+        end
+        object dbeEmail: TDBEdit
+          Left = 90
+          Height = 21
+          Top = 128
+          Width = 424
+          DataField = 'email'
+          DataSource = dsCompanias
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 7
+        end
+        object dbePaginaWeb: TDBEdit
+          Left = 90
+          Height = 21
+          Top = 156
+          Width = 424
+          DataField = 'paginaweb'
+          DataSource = dsCompanias
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 8
+        end
+        object dbmTelefonosAsistencia: TDBMemo
+          Left = 34
+          Height = 98
+          Top = 207
+          Width = 480
+          DataField = 'telefonoasistencia'
+          DataSource = dsCompanias
+          TabOrder = 9
+        end
+      end
+      object tsNotas: TTabSheet
+        Caption = 'Notas'
+        ClientHeight = 318
+        ClientWidth = 560
+        object dbmNotas: TDBMemo
+          Left = 0
+          Height = 318
+          Top = 0
+          Width = 560
+          Align = alClient
+          DataField = 'notas'
+          DataSource = dsCompanias
+          TabOrder = 0
+        end
+      end
+      object tsContactos1: TTabSheet
+        Caption = 'Contactos 1'
+        ClientHeight = 318
+        ClientWidth = 560
+        object gbProduccion: TGroupBox
+          Left = 7
+          Height = 96
+          Top = 8
+          Width = 601
+          Caption = ' Producción '
+          ClientHeight = 78
+          ClientWidth = 597
+          TabOrder = 0
+          object Label23: TLabel
+            Left = 18
+            Height = 13
+            Top = 8
+            Width = 44
+            Caption = 'Contacto'
+            ParentColor = False
+          end
+          object Label24: TLabel
+            Left = 18
+            Height = 13
+            Top = 30
+            Width = 42
+            Caption = 'Teléfono'
+            ParentColor = False
+          end
+          object Label25: TLabel
+            Left = 280
+            Height = 13
+            Top = 30
+            Width = 18
+            Caption = 'Fax'
+            ParentColor = False
+          end
+          object Label26: TLabel
+            Left = 18
+            Height = 13
+            Top = 52
+            Width = 24
+            Caption = 'Email'
+            ParentColor = False
+          end
+          object dbProdContacto: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 3
+            Width = 424
+            DataField = 'prodcontacto'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object dbeProdTelefono: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'prodtelefono'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object dbeProdFax: TDBEdit
+            Left = 312
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'prodfax'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object dbeProdEmail: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 47
+            Width = 424
+            DataField = 'prodemail'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 3
+          end
+        end
+        object gbSiniestros: TGroupBox
+          Left = 7
+          Height = 96
+          Top = 112
+          Width = 601
+          Caption = ' Siniestros '
+          ClientHeight = 78
+          ClientWidth = 597
+          TabOrder = 1
+          object Label27: TLabel
+            Left = 18
+            Height = 13
+            Top = 8
+            Width = 44
+            Caption = 'Contacto'
+            ParentColor = False
+          end
+          object Label28: TLabel
+            Left = 18
+            Height = 13
+            Top = 30
+            Width = 42
+            Caption = 'Teléfono'
+            ParentColor = False
+          end
+          object Label29: TLabel
+            Left = 280
+            Height = 13
+            Top = 30
+            Width = 18
+            Caption = 'Fax'
+            ParentColor = False
+          end
+          object Label30: TLabel
+            Left = 18
+            Height = 13
+            Top = 52
+            Width = 24
+            Caption = 'Email'
+            ParentColor = False
+          end
+          object dbeSiniContacto: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 3
+            Width = 424
+            DataField = 'sinicontacto'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object dbeSiniTelefono: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'sinitelefono'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object dbeSiniFax: TDBEdit
+            Left = 312
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'sinifax'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object dbeContabEmail1: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 47
+            Width = 424
+            DataField = 'siniemail'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 3
+          end
+        end
+        object gbPerito: TGroupBox
+          Left = 7
+          Height = 96
+          Top = 216
+          Width = 601
+          Caption = '  Perito '
+          ClientHeight = 78
+          ClientWidth = 597
+          TabOrder = 2
+          object Label31: TLabel
+            Left = 18
+            Height = 13
+            Top = 8
+            Width = 44
+            Caption = 'Contacto'
+            ParentColor = False
+          end
+          object Label32: TLabel
+            Left = 18
+            Height = 13
+            Top = 30
+            Width = 42
+            Caption = 'Teléfono'
+            ParentColor = False
+          end
+          object Label33: TLabel
+            Left = 280
+            Height = 13
+            Top = 30
+            Width = 18
+            Caption = 'Fax'
+            ParentColor = False
+          end
+          object Label34: TLabel
+            Left = 18
+            Height = 13
+            Top = 52
+            Width = 24
+            Caption = 'Email'
+            ParentColor = False
+          end
+          object dbePeritoContacto: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 3
+            Width = 424
+            DataField = 'peritocontacto'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object dbePeritoTelefono: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'peritotelefono'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object dbePeritoFax: TDBEdit
+            Left = 312
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'peritofax'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object dbePeritoEmail: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 47
+            Width = 424
+            DataField = 'peritoemail'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 3
+          end
+        end
+      end
+      object tsContactos2: TTabSheet
+        Caption = 'Contactos 2'
+        ClientHeight = 318
+        ClientWidth = 560
+        object gbAdministracion: TGroupBox
+          Left = 7
+          Height = 96
+          Top = 8
+          Width = 601
+          Caption = ' Administración '
+          ClientHeight = 78
+          ClientWidth = 597
+          TabOrder = 0
+          object Label11: TLabel
+            Left = 18
+            Height = 13
+            Top = 8
+            Width = 44
+            Caption = 'Contacto'
+            ParentColor = False
+          end
+          object Label12: TLabel
+            Left = 18
+            Height = 13
+            Top = 30
+            Width = 42
+            Caption = 'Teléfono'
+            ParentColor = False
+          end
+          object Label13: TLabel
+            Left = 280
+            Height = 13
+            Top = 30
+            Width = 18
+            Caption = 'Fax'
+            ParentColor = False
+          end
+          object Label14: TLabel
+            Left = 18
+            Height = 13
+            Top = 52
+            Width = 24
+            Caption = 'Email'
+            ParentColor = False
+          end
+          object dbeAdminContacto: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 3
+            Width = 424
+            DataField = 'admincontacto'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object dbeAdminTelefono: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'admintelefono'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object dbeAdminFax: TDBEdit
+            Left = 312
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'adminfax'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object dbeAdminEmail: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 47
+            Width = 424
+            DataField = 'adminemail'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 3
+          end
+        end
+        object gbContabilidad: TGroupBox
+          Left = 7
+          Height = 96
+          Top = 112
+          Width = 601
+          Caption = ' Contabilidad '
+          ClientHeight = 78
+          ClientWidth = 597
+          TabOrder = 1
+          object Label15: TLabel
+            Left = 18
+            Height = 13
+            Top = 8
+            Width = 44
+            Caption = 'Contacto'
+            ParentColor = False
+          end
+          object Label16: TLabel
+            Left = 18
+            Height = 13
+            Top = 30
+            Width = 42
+            Caption = 'Teléfono'
+            ParentColor = False
+          end
+          object Label17: TLabel
+            Left = 280
+            Height = 13
+            Top = 30
+            Width = 18
+            Caption = 'Fax'
+            ParentColor = False
+          end
+          object Label18: TLabel
+            Left = 18
+            Height = 13
+            Top = 52
+            Width = 24
+            Caption = 'Email'
+            ParentColor = False
+          end
+          object dbeContabContacto: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 3
+            Width = 424
+            DataField = 'contabcontacto'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object dbeContabTelefono: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'contabtelefono'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object dbeContabFax: TDBEdit
+            Left = 312
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'contabfax'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object dbeContabEmail: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 47
+            Width = 424
+            DataField = 'contabemail'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 3
+          end
+        end
+        object gbComercial: TGroupBox
+          Left = 7
+          Height = 96
+          Top = 216
+          Width = 601
+          Caption = ' Comercial '
+          ClientHeight = 78
+          ClientWidth = 597
+          TabOrder = 2
+          object Label19: TLabel
+            Left = 18
+            Height = 13
+            Top = 8
+            Width = 44
+            Caption = 'Contacto'
+            ParentColor = False
+          end
+          object Label20: TLabel
+            Left = 18
+            Height = 13
+            Top = 30
+            Width = 42
+            Caption = 'Teléfono'
+            ParentColor = False
+          end
+          object Label21: TLabel
+            Left = 280
+            Height = 13
+            Top = 30
+            Width = 18
+            Caption = 'Fax'
+            ParentColor = False
+          end
+          object Label22: TLabel
+            Left = 18
+            Height = 13
+            Top = 52
+            Width = 24
+            Caption = 'Email'
+            ParentColor = False
+          end
+          object dbeComercialContacto: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 3
+            Width = 424
+            DataField = 'comercialcontacto'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object dbeComercialTelefono: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'comercialtelefono'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object dbeComercialFax: TDBEdit
+            Left = 312
+            Height = 21
+            Top = 25
+            Width = 152
+            DataField = 'comercialfax'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object dbeComercialEmail: TDBEdit
+            Left = 77
+            Height = 21
+            Top = 47
+            Width = 424
+            DataField = 'comercialemail'
+            DataSource = dsCompanias
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 3
+          end
+        end
+      end
+    end
+  end
+  object dsCompanias: TDataSource[2]
+    DataSet = dbCompanias
+    left = 512
+    top = 88
+  end
+  object dbCompanias: TZQuery[3]
+    Connection = formularioPrincipal.ZConnection1
+    SQL.Strings = (
+      'SELECT * FROM companias'
+    )
+    Params = <>
+    left = 512
+    top = 24
+    object dbCompaniasid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object dbCompaniasnombre: TStringField
+      FieldKind = fkData
+      FieldName = 'nombre'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniasdireccion: TStringField
+      FieldKind = fkData
+      FieldName = 'direccion'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniascodigopostal: TStringField
+      FieldKind = fkData
+      FieldName = 'codigopostal'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbCompaniaspoblacion: TStringField
+      FieldKind = fkData
+      FieldName = 'poblacion'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object dbCompaniasprovincia: TLongintField
+      FieldKind = fkData
+      FieldName = 'provincia'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbCompaniastelefono1: TStringField
+      FieldKind = fkData
+      FieldName = 'telefono1'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniastelefono2: TStringField
+      FieldKind = fkData
+      FieldName = 'telefono2'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniasfax: TStringField
+      FieldKind = fkData
+      FieldName = 'fax'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniasemail: TStringField
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniaspaginaweb: TStringField
+      FieldKind = fkData
+      FieldName = 'paginaweb'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniastelefonoasistencia: TMemoField
+      FieldKind = fkData
+      FieldName = 'telefonoasistencia'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object dbCompaniasnotas: TMemoField
+      FieldKind = fkData
+      FieldName = 'notas'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object dbCompaniasadmincontacto: TStringField
+      FieldKind = fkData
+      FieldName = 'admincontacto'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniasadmintelefono: TStringField
+      FieldKind = fkData
+      FieldName = 'admintelefono'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniasadminfax: TStringField
+      FieldKind = fkData
+      FieldName = 'adminfax'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniasadminemail: TStringField
+      FieldKind = fkData
+      FieldName = 'adminemail'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniascontabcontacto: TStringField
+      FieldKind = fkData
+      FieldName = 'contabcontacto'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniascontabtelefono: TStringField
+      FieldKind = fkData
+      FieldName = 'contabtelefono'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniascontabfax: TStringField
+      FieldKind = fkData
+      FieldName = 'contabfax'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniascontabemail: TStringField
+      FieldKind = fkData
+      FieldName = 'contabemail'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniasprodcontacto: TStringField
+      FieldKind = fkData
+      FieldName = 'prodcontacto'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniasprodtelefono: TStringField
+      FieldKind = fkData
+      FieldName = 'prodtelefono'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniasprodfax: TStringField
+      FieldKind = fkData
+      FieldName = 'prodfax'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniasprodemail: TStringField
+      FieldKind = fkData
+      FieldName = 'prodemail'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniassinicontacto: TStringField
+      FieldKind = fkData
+      FieldName = 'sinicontacto'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniassinitelefono: TStringField
+      FieldKind = fkData
+      FieldName = 'sinitelefono'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniassinifax: TStringField
+      FieldKind = fkData
+      FieldName = 'sinifax'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniassiniemail: TStringField
+      FieldKind = fkData
+      FieldName = 'siniemail'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniascomercialcontacto: TStringField
+      FieldKind = fkData
+      FieldName = 'comercialcontacto'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniascomercialtelefono: TStringField
+      FieldKind = fkData
+      FieldName = 'comercialtelefono'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniascomercialfax: TStringField
+      FieldKind = fkData
+      FieldName = 'comercialfax'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniascomercialemail: TStringField
+      FieldKind = fkData
+      FieldName = 'comercialemail'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniasperitocontacto: TStringField
+      FieldKind = fkData
+      FieldName = 'peritocontacto'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object dbCompaniasperitotelefono: TStringField
+      FieldKind = fkData
+      FieldName = 'peritotelefono'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniasperitofax: TStringField
+      FieldKind = fkData
+      FieldName = 'peritofax'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object dbCompaniasperitoemail: TStringField
+      FieldKind = fkData
+      FieldName = 'peritoemail'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
     end
   end
 end

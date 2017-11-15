@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  formCompanias;
+  formCompanias, ZConnection, ZDataset;
 
 type
 
@@ -24,6 +24,7 @@ type
     OptionItemImpresora: TMenuItem;
     OptionItemAyuda: TMenuItem;
     menuPrincipal: TMainMenu;
+    ZConnection1: TZConnection;
     procedure OpcionItemCompaniasClick(Sender: TObject);
     procedure OptionItemSalirClick(Sender: TObject);
   private

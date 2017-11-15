@@ -46,4 +46,22 @@ object formularioPrincipal: TformularioPrincipal
       end
     end
   end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    ClientCodepage = 'utf8'
+    Properties.Strings = (
+      'codepage=utf8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 0
+    Database = 'seguros'
+    User = 'seguros'
+    Password = 'seguros'
+    Protocol = 'MariaDB-5'
+    LibraryLocation = 'C:\DesarrolloD7\AgenciasMIT\libmysql.dll'
+    left = 431
+    top = 145
+  end
 end
