@@ -33,7 +33,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="seguros.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -46,6 +46,12 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="formPrincipal"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="formpadre.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="formularioPadre"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
