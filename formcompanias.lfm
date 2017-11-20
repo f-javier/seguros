@@ -14,6 +14,9 @@ inherited formularioCompanias: TformularioCompanias
       DataSource = dsCompanias
       Hints.Strings = (      )
     end
+    inherited sbBuscar: TSpeedButton
+      Visible = False
+    end
     inherited sbSalir: TSpeedButton
       Left = 544
     end
@@ -72,8 +75,8 @@ inherited formularioCompanias: TformularioCompanias
       Height = 344
       Top = 48
       Width = 568
-      ActivePage = tsDatos
-      TabIndex = 0
+      ActivePage = tsFiltro
+      TabIndex = 4
       TabOrder = 2
       object tsDatos: TTabSheet
         Caption = 'Datos'
@@ -791,17 +794,68 @@ inherited formularioCompanias: TformularioCompanias
           end
         end
       end
+      object tsFiltro: TTabSheet
+        Caption = 'Filtro'
+        ClientHeight = 318
+        ClientWidth = 560
+        object Label35: TLabel
+          Left = 8
+          Height = 13
+          Top = 12
+          Width = 37
+          Caption = 'Nombre'
+          ParentColor = False
+        end
+        object BusqNombre: TEdit
+          Left = 52
+          Height = 21
+          Top = 8
+          Width = 236
+          CharCase = ecUppercase
+          TabOrder = 0
+        end
+        object btnAplicarFiltro: TBitBtn
+          Left = 480
+          Height = 30
+          Top = 4
+          Width = 75
+          Caption = 'Aplicar Filtro'
+          OnClick = btnAplicarFiltroClick
+          TabOrder = 1
+        end
+        object DBGrid1: TDBGrid
+          Left = 5
+          Height = 268
+          Top = 39
+          Width = 547
+          Color = clWindow
+          Columns = <          
+            item
+              Title.Caption = 'Id.'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              Title.Caption = 'Nombre'
+              Width = 300
+              FieldName = 'nombre'
+            end>
+          DataSource = dsCompanias
+          ReadOnly = True
+          TabOrder = 2
+        end
+      end
     end
   end
   object dsCompanias: TDataSource[2]
     DataSet = dbCompanias
     left = 512
-    top = 88
+    top = 72
   end
   object dbCompanias: TZQuery[3]
     Connection = formularioPrincipal.ZConnection1
     SQL.Strings = (
-      'SELECT * FROM companias'
+      'SELECT * FROM companias ORDER BY nombre'
     )
     Params = <>
     left = 512

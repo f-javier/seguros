@@ -6,13 +6,14 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  DbCtrls, Buttons, ComCtrls, StdCtrls, formpadre, db, ZDataset;
+  DbCtrls, Buttons, ComCtrls, StdCtrls, DBGrids, formpadre, db, ZDataset;
 
 type
 
   { TformularioCompanias }
 
   TformularioCompanias = class(TformularioPadre)
+    btnAplicarFiltro: TBitBtn;
     dbCompaniasadmincontacto: TStringField;
     dbCompaniasadminemail: TStringField;
     dbCompaniasadminfax: TStringField;
@@ -51,6 +52,7 @@ type
     dbCompaniastelefono2: TStringField;
     dbCompaniastelefonoasistencia: TMemoField;
     dbeAdminContacto: TDBEdit;
+    DBGrid1: TDBGrid;
     dbProdContacto: TDBEdit;
     dbeAdminEmail: TDBEdit;
     dbeProdEmail: TDBEdit;
@@ -88,6 +90,7 @@ type
     dsCompanias: TDataSource;
     dbeId: TDBEdit;
     dbeNombre: TDBEdit;
+    BusqNombre: TEdit;
     gbAdministracion: TGroupBox;
     gbProduccion: TGroupBox;
     gbPerito: TGroupBox;
@@ -122,6 +125,7 @@ type
     Label32: TLabel;
     Label33: TLabel;
     Label34: TLabel;
+    Label35: TLabel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
@@ -130,11 +134,13 @@ type
     Label9: TLabel;
     pc: TPageControl;
     Panel1: TPanel;
+    tsFiltro: TTabSheet;
     tsContactos1: TTabSheet;
     tsContactos2: TTabSheet;
     tsNotas: TTabSheet;
     tsDatos: TTabSheet;
     dbCompanias: TZQuery;
+    procedure btnAplicarFiltroClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDeactivate(Sender: TObject);
@@ -165,6 +171,14 @@ end;
 
 procedure TformularioCompanias.FormActivate(Sender: TObject);
 begin
+  dbCompanias.Open;
+end;
+
+procedure TformularioCompanias.btnAplicarFiltroClick(Sender: TObject);
+begin
+  if dbCompanias.Active then dbCompanias.Close;
+  dbCompanias.SQL.Clear;
+  dbCompanias.SQL.Add('SELECT * FROM companias WHERE nombre LIKE "%'+BusqNombre.Text+'%" ORDER BY nombre');
   dbCompanias.Open;
 end;
 
