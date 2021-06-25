@@ -1,0 +1,122 @@
+inherited formularioRamos: TformularioRamos
+  Caption = 'Ramos'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  inherited PanelBotonera: TPanel
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = (      )
+    end
+    inherited sbBuscar: TSpeedButton
+      Visible = False
+    end
+  end
+  object dbRamos: TZQuery[1]
+    Connection = formularioPrincipal.ZConnection1
+    SQL.Strings = (
+      'SELECT * FROM ramos ORDER BY nombre'
+    )
+    Params = <>
+    Left = 551
+    Top = 51
+    object dbRamosid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object dbRamosnombre: TStringField
+      FieldKind = fkData
+      FieldName = 'nombre'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 35
+    end
+    object dbRamoscompaniaid: TLongintField
+      FieldKind = fkData
+      FieldName = 'companiaid'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbRamoscomision: TFloatField
+      FieldKind = fkData
+      FieldName = 'comision'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 7
+    end
+    object dbRamoscomisionagente: TFloatField
+      FieldKind = fkData
+      FieldName = 'comisionagente'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 7
+    end
+    object dbRamosramodecid: TLongintField
+      FieldKind = fkData
+      FieldName = 'ramodecid'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbRamosfechacreacion: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'fechacreacion'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbRamosusuariocreacion: TStringField
+      FieldKind = fkData
+      FieldName = 'usuariocreacion'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbRamosfechaultimamodificacion: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'fechaultimamodificacion'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbRamosusuarioultimamodificacion: TStringField
+      FieldKind = fkData
+      FieldName = 'usuarioultimamodificacion'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+  end
+  object dsRamos: TDataSource[2]
+    DataSet = dbRamos
+    Left = 552
+    Top = 112
+  end
+end

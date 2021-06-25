@@ -30,6 +30,8 @@ type
     dbCompaniasdireccion: TStringField;
     dbCompaniasemail: TStringField;
     dbCompaniasfax: TStringField;
+    dbCompaniasfechacreacion: TDateTimeField;
+    dbCompaniasfechaultimamodificacion: TDateTimeField;
     dbCompaniasid: TLongintField;
     dbCompaniasnombre: TStringField;
     dbCompaniasnotas: TMemoField;
@@ -51,7 +53,13 @@ type
     dbCompaniastelefono1: TStringField;
     dbCompaniastelefono2: TStringField;
     dbCompaniastelefonoasistencia: TMemoField;
+    dbCompaniasusuariocreacion: TStringField;
+    dbCompaniasusuarioultimamodificacion: TStringField;
     dbeAdminContacto: TDBEdit;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
     DBGrid1: TDBGrid;
     dbProdContacto: TDBEdit;
     dbeAdminEmail: TDBEdit;
@@ -92,11 +100,13 @@ type
     dbeNombre: TDBEdit;
     BusqNombre: TEdit;
     gbAdministracion: TGroupBox;
+    gbUltimaModificacion: TGroupBox;
     gbProduccion: TGroupBox;
     gbPerito: TGroupBox;
     gbContabilidad: TGroupBox;
     gbComercial: TGroupBox;
     gbSiniestros: TGroupBox;
+    gbCreacion: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
     Label11: TLabel;
@@ -126,6 +136,10 @@ type
     Label33: TLabel;
     Label34: TLabel;
     Label35: TLabel;
+    Label36: TLabel;
+    Label37: TLabel;
+    Label38: TLabel;
+    Label39: TLabel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
@@ -134,6 +148,7 @@ type
     Label9: TLabel;
     pc: TPageControl;
     Panel1: TPanel;
+    tsControl: TTabSheet;
     tsFiltro: TTabSheet;
     tsContactos1: TTabSheet;
     tsContactos2: TTabSheet;
@@ -141,9 +156,9 @@ type
     tsDatos: TTabSheet;
     dbCompanias: TZQuery;
     procedure btnAplicarFiltroClick(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
+    procedure dbCompaniasBeforePost(DataSet: TDataSet);
     procedure FormCreate(Sender: TObject);
-    procedure FormDeactivate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     { private declarations }
   public
@@ -162,24 +177,42 @@ implementation
 procedure TformularioCompanias.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
+  dbCompanias.Open;
 end;
 
-procedure TformularioCompanias.FormDeactivate(Sender: TObject);
+procedure TformularioCompanias.FormDestroy(Sender: TObject);
 begin
   dbCompanias.Close;
-end;
-
-procedure TformularioCompanias.FormActivate(Sender: TObject);
-begin
-  dbCompanias.Open;
 end;
 
 procedure TformularioCompanias.btnAplicarFiltroClick(Sender: TObject);
 begin
   if dbCompanias.Active then dbCompanias.Close;
-  dbCompanias.SQL.Clear;
-  dbCompanias.SQL.Add('SELECT * FROM companias WHERE nombre LIKE "%'+BusqNombre.Text+'%" ORDER BY nombre');
-  dbCompanias.Open;
+  if btnAplicarFiltro.Caption='Aplicar Filtro' then begin
+     dbCompanias.SQL.Clear;
+     dbCompanias.SQL.Add('SELECT * FROM companias WHERE nombre LIKE "%'+BusqNombre.Text+'%" ORDER BY nombre');
+     dbCompanias.Open;
+     BusqNombre.Color:=clSilver;
+     btnAplicarFiltro.Caption:='Eliminar Filtro';
+  end else begin
+      dbCompanias.SQL.Clear;
+      dbCompanias.SQL.Add('SELECT * FROM companias ORDER BY nombre');
+      dbCompanias.Open;
+      BusqNombre.Text:='';
+      BusqNombre.Color:=clDefault;
+      btnAplicarFiltro.Caption:='Aplicar Filtro';
+  end;
+end;
+
+procedure TformularioCompanias.dbCompaniasBeforePost(DataSet: TDataSet);
+begin
+  if (dsCompanias.State in [dsInsert]) then begin
+     dbCompaniasFechacreacion.Value:=now;
+     dbCompaniasUsuariocreacion.Value:=dbCompanias.Connection.User;
+  end else begin
+    dbCompaniasFechaultimamodificacion.Value:=now;
+    dbCompaniasUsuarioultimamodificacion.Value:=dbCompanias.Connection.User;
+  end;
 end;
 
 end.

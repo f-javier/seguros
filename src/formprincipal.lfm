@@ -6,11 +6,11 @@ object formularioPrincipal: TformularioPrincipal
   Caption = 'Agencias/Corredurías de Seguros'
   Menu = menuPrincipal
   Position = poDesktopCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.10.0'
   WindowState = wsMaximized
   object menuPrincipal: TMainMenu
-    left = 216
-    top = 168
+    Left = 216
+    Top = 168
     object MenuArchivo: TMenuItem
       Caption = '&Archivo'
       object OptionItemAyuda: TMenuItem
@@ -44,14 +44,18 @@ object formularioPrincipal: TformularioPrincipal
         Caption = '&Compañías'
         OnClick = OpcionItemCompaniasClick
       end
+      object OpcionItemRamos: TMenuItem
+        Caption = '&Ramos'
+        OnClick = OpcionItemRamosClick
+      end
     end
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = False
     ClientCodepage = 'utf8'
     Properties.Strings = (
       'codepage=utf8'
+      'AutoEncodeStrings=ON'
     )
     Connected = True
     HostName = 'localhost'
@@ -59,9 +63,8 @@ object formularioPrincipal: TformularioPrincipal
     Database = 'seguros'
     User = 'seguros'
     Password = 'seguros'
-    Protocol = 'MariaDB-5'
-    LibraryLocation = 'C:\DesarrolloD7\AgenciasMIT\libmysql.dll'
-    left = 431
-    top = 145
+    Protocol = 'mysql-5'
+    Left = 431
+    Top = 145
   end
 end
