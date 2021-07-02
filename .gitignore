@@ -58,6 +58,9 @@ lib/
 # Application bundle for Mac OS
 *.app/
 
+# Material complementario
+capturas/
+
 
 # Delphi compiler-generated binaries (safe to delete)
 *.exe
