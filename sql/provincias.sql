@@ -1,24 +1,12 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Versión del servidor:         5.5.5-10.0.4-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win32
--- HeidiSQL Versión:             8.0.0.4396
--- --------------------------------------------------------
+CREATE TABLE `provincias` (
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`nombre` VARCHAR(30) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_spanish_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=53;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
--- Volcando estructura para tabla seguros.provincias
-CREATE TABLE IF NOT EXISTS `provincias` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- Volcando datos para la tabla seguros.provincias: ~3 rows (aproximadamente)
-/*!40000 ALTER TABLE `provincias` DISABLE KEYS */;
 INSERT INTO `provincias` (`id`, `nombre`) VALUES
 	(1, 'Álava'),
 	(2, 'Albacete'),
@@ -72,7 +60,4 @@ INSERT INTO `provincias` (`id`, `nombre`) VALUES
 	(50, 'Zaragoza'),
 	(51, 'Ceuta'),
 	(52, 'Melilla');
-/*!40000 ALTER TABLE `provincias` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
