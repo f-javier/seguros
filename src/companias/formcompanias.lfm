@@ -75,8 +75,8 @@ inherited formularioCompanias: TformularioCompanias
       Height = 344
       Top = 48
       Width = 568
-      ActivePage = tsFiltro
-      TabIndex = 5
+      ActivePage = tsDatos
+      TabIndex = 0
       TabOrder = 2
       object tsDatos: TTabSheet
         Caption = 'Datos'
