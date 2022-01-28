@@ -1,4 +1,4 @@
-unit formpadre;
+unit frmPadre;
 
 {$mode objfpc}{$H+}
 
@@ -10,9 +10,9 @@ uses
 
 type
 
-  { TformularioPadre }
+  { TformPadre }
 
-  TformularioPadre = class(TForm)
+  TformPadre = class(TForm)
     DBNavigator1: TDBNavigator;
     PanelBotonera: TPanel;
     sbBuscar: TSpeedButton;
@@ -26,15 +26,15 @@ type
   end;
 
 var
-  formularioPadre: TformularioPadre;
+  formPadre: TformPadre;
 
 implementation
 
 {$R *.lfm}
 
-{ TformularioPadre }
+{ TformPadre }
 
-procedure TformularioPadre.sbSalirClick(Sender: TObject);
+procedure TformPadre.sbSalirClick(Sender: TObject);
 begin
   Self.Close;
 end;

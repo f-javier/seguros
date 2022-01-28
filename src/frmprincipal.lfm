@@ -1,4 +1,4 @@
-object formularioPrincipal: TformularioPrincipal
+object formPrincipal: TformPrincipal
   Left = 248
   Height = 494
   Top = 128
@@ -48,10 +48,27 @@ object formularioPrincipal: TformularioPrincipal
         Caption = '&Ramos'
         OnClick = OpcionItemRamosClick
       end
+      object OpcionItemProfesiones: TMenuItem
+        Caption = 'Pro&fesiones'
+        OnClick = OpcionItemProfesionesClick
+      end
+      object OpcionItemFormasPago: TMenuItem
+        Caption = 'Formas de Pago'
+        OnClick = OpcionItemFormasPagoClick
+      end
+      object MenuItem1: TMenuItem
+        Caption = '-'
+      end
+      object OpcionItemClientes: TMenuItem
+        Caption = 'Clientes'
+        ShortCut = 16468
+        OnClick = OpcionItemClientesClick
+      end
     end
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
     ClientCodepage = 'utf8'
     Properties.Strings = (
       'codepage=utf8'

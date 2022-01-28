@@ -1,4 +1,4 @@
-inherited formularioCompanias: TformularioCompanias
+inherited formCompanias: TformCompanias
   Height = 442
   Width = 585
   Caption = 'Compañías'
@@ -75,8 +75,8 @@ inherited formularioCompanias: TformularioCompanias
       Height = 344
       Top = 48
       Width = 568
-      ActivePage = tsDatos
-      TabIndex = 0
+      ActivePage = tsControl
+      TabIndex = 4
       TabOrder = 2
       object tsDatos: TTabSheet
         Caption = 'Datos'
@@ -962,7 +962,7 @@ inherited formularioCompanias: TformularioCompanias
     Top = 72
   end
   object dbCompanias: TZQuery[3]
-    Connection = formularioPrincipal.ZConnection1
+    Connection = formPrincipal.ZConnection1
     BeforePost = dbCompaniasBeforePost
     SQL.Strings = (
       'SELECT * FROM companias ORDER BY nombre'

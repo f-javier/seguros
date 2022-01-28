@@ -1,0 +1,1762 @@
+inherited formClientes: TformClientes
+  Height = 553
+  Width = 757
+  Caption = 'Clientes'
+  ClientHeight = 553
+  ClientWidth = 757
+  OnClose = FormClose
+  OnCreate = FormCreate
+  inherited PanelBotonera: TPanel
+    Width = 757
+    ClientWidth = 757
+    inherited DBNavigator1: TDBNavigator
+      DataSource = dsClientes
+      Hints.Strings = (      )
+    end
+    inherited sbBuscar: TSpeedButton
+      Visible = False
+    end
+    inherited sbSalir: TSpeedButton
+      Left = 712
+    end
+    object lEstado: TLabel[4]
+      Left = 384
+      Height = 32
+      Top = 3
+      Width = 270
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'ESTADO'
+      Font.Height = 32
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      OptimalFill = True
+    end
+  end
+  object Panel1: TPanel[1]
+    Left = 0
+    Height = 513
+    Top = 40
+    Width = 757
+    Align = alClient
+    ClientHeight = 513
+    ClientWidth = 757
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 21
+      Height = 13
+      Top = 24
+      Width = 18
+      Caption = 'Id.:'
+      ParentColor = False
+    end
+    object DBEdit1: TDBEdit
+      Left = 52
+      Height = 21
+      Top = 19
+      Width = 48
+      DataField = 'id'
+      DataSource = dsClientes
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = clSilver
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label2: TLabel
+      Left = 152
+      Height = 13
+      Top = 24
+      Width = 41
+      Caption = 'Nombre:'
+      ParentColor = False
+    end
+    object DBEdit2: TDBEdit
+      Left = 208
+      Height = 21
+      Top = 19
+      Width = 344
+      DataField = 'nombrecompleto'
+      DataSource = dsClientes
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = clSilver
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object pc: TPageControl
+      Left = 10
+      Height = 448
+      Top = 56
+      Width = 736
+      ActivePage = tsPersonales
+      TabIndex = 2
+      TabOrder = 2
+      object tsDatos: TTabSheet
+        Caption = 'Datos'
+        ClientHeight = 422
+        ClientWidth = 728
+        object dbeIdentificador: TDBEdit
+          Left = 208
+          Height = 21
+          Top = 12
+          Width = 88
+          DataField = 'identificador'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label4: TLabel
+          Left = 344
+          Height = 13
+          Top = 16
+          Width = 62
+          Caption = 'Válido hasta:'
+          ParentColor = False
+        end
+        object dbeNombre: TDBEdit
+          Left = 104
+          Height = 21
+          Top = 40
+          Width = 136
+          DataField = 'nombre'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object dbePoblacion: TDBEdit
+          Left = 152
+          Height = 21
+          Top = 88
+          Width = 360
+          DataField = 'poblacion'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 8
+        end
+        object Label5: TLabel
+          Left = 32
+          Height = 13
+          Top = 116
+          Width = 47
+          Caption = 'Provincia:'
+          ParentColor = False
+        end
+        object dblcProvincia: TDBLookupComboBox
+          Left = 104
+          Height = 21
+          Top = 112
+          Width = 188
+          DataField = 'provincia'
+          DataSource = dsClientes
+          KeyField = 'id'
+          ListField = 'nombre'
+          ListFieldIndex = 0
+          ListSource = dsProvincias
+          LookupCache = False
+          TabOrder = 9
+        end
+        object Label6: TLabel
+          Left = 32
+          Height = 13
+          Top = 141
+          Width = 51
+          Caption = 'Teléfonos:'
+          ParentColor = False
+        end
+        object dbeTelefono1: TDBEdit
+          Left = 104
+          Height = 21
+          Top = 136
+          Width = 110
+          DataField = 'telefono1'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 10
+        end
+        object dbeTelefono2: TDBEdit
+          Left = 230
+          Height = 21
+          Top = 136
+          Width = 110
+          DataField = 'telefono2'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 11
+        end
+        object Label7: TLabel
+          Left = 366
+          Height = 13
+          Top = 141
+          Width = 18
+          Caption = 'Fax'
+          ParentColor = False
+        end
+        object dbeFax: TDBEdit
+          Left = 398
+          Height = 21
+          Top = 136
+          Width = 110
+          DataField = 'fax'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 12
+        end
+        object Label10: TLabel
+          Left = 32
+          Height = 13
+          Top = 168
+          Width = 124
+          Caption = 'Más opciones de contacto'
+          ParentColor = False
+        end
+        object dbmMasTelefonos: TDBMemo
+          Left = 34
+          Height = 149
+          Top = 187
+          Width = 480
+          DataField = 'mastelefonos'
+          DataSource = dsClientes
+          TabOrder = 13
+        end
+        object Label13: TLabel
+          Left = 32
+          Height = 13
+          Top = 16
+          Width = 65
+          Caption = 'Identificador:'
+          ParentColor = False
+        end
+        object dbcbIdentificador: TDBComboBox
+          Left = 104
+          Height = 21
+          Top = 12
+          Width = 96
+          DataField = 'tipodocumento'
+          DataSource = dsClientes
+          ItemHeight = 13
+          Items.Strings = (
+            'NIF'
+            'CIF'
+            'T. Residencia'
+            'Pasaporte'
+            'Otros'
+          )
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object dbeFechaValidez: TDBEdit
+          Left = 424
+          Height = 21
+          Top = 12
+          Width = 88
+          DataField = 'fechadevalidez'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label14: TLabel
+          Left = 32
+          Height = 13
+          Top = 44
+          Width = 41
+          Caption = 'Nombre:'
+          ParentColor = False
+        end
+        object Label15: TLabel
+          Left = 285
+          Height = 13
+          Top = 44
+          Width = 46
+          Caption = 'Apellidos:'
+          ParentColor = False
+        end
+        object dbeApellido1: TDBEdit
+          Left = 344
+          Height = 21
+          Top = 40
+          Width = 138
+          DataField = 'apellido1'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object dbeApellido2: TDBEdit
+          Left = 488
+          Height = 21
+          Top = 40
+          Width = 138
+          DataField = 'apellido2'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
+        end
+        object Label16: TLabel
+          Left = 34
+          Height = 13
+          Top = 72
+          Width = 47
+          Caption = 'Dirección:'
+          ParentColor = False
+        end
+        object dbeCodigoPostal: TDBEdit
+          Left = 104
+          Height = 21
+          Top = 88
+          Width = 43
+          DataField = 'codigopostal'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 7
+        end
+        object dbeDireccion: TDBEdit
+          Left = 104
+          Height = 21
+          Top = 64
+          Width = 360
+          DataField = 'direccion'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 6
+        end
+        object Label17: TLabel
+          Left = 34
+          Height = 13
+          Top = 96
+          Width = 49
+          Caption = 'Población:'
+          ParentColor = False
+        end
+      end
+      object tsFechas: TTabSheet
+        Caption = 'Fechas'
+        ClientHeight = 422
+        ClientWidth = 728
+        object Label18: TLabel
+          Left = 32
+          Height = 13
+          Top = 76
+          Width = 77
+          Caption = 'Fecha carnet A:'
+          ParentColor = False
+        end
+        object dbeCarnetA: TDBEdit
+          Left = 120
+          Height = 21
+          Top = 72
+          Width = 88
+          DataField = 'fechacarneta'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label19: TLabel
+          Left = 264
+          Height = 13
+          Top = 76
+          Width = 62
+          Caption = 'Válido hasta:'
+          ParentColor = False
+        end
+        object dbeValCarnetA: TDBEdit
+          Left = 336
+          Height = 21
+          Top = 72
+          Width = 88
+          DataField = 'validezcarneta'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label20: TLabel
+          Left = 32
+          Height = 13
+          Top = 104
+          Width = 83
+          Caption = 'Fecha carnet A1:'
+          ParentColor = False
+        end
+        object dbeCarnetA1: TDBEdit
+          Left = 120
+          Height = 21
+          Top = 100
+          Width = 88
+          DataField = 'fechacarneta1'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object Label21: TLabel
+          Left = 264
+          Height = 13
+          Top = 104
+          Width = 62
+          Caption = 'Válido hasta:'
+          ParentColor = False
+        end
+        object dbeValCarnetA1: TDBEdit
+          Left = 336
+          Height = 21
+          Top = 100
+          Width = 88
+          DataField = 'validezcarneta1'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object Label22: TLabel
+          Left = 32
+          Height = 13
+          Top = 132
+          Width = 83
+          Caption = 'Fecha carnet A2:'
+          ParentColor = False
+        end
+        object dbeCarnetA2: TDBEdit
+          Left = 120
+          Height = 21
+          Top = 128
+          Width = 88
+          DataField = 'fechacarneta2'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
+        end
+        object Label23: TLabel
+          Left = 264
+          Height = 13
+          Top = 132
+          Width = 62
+          Caption = 'Válido hasta:'
+          ParentColor = False
+        end
+        object dbeValCarnetA2: TDBEdit
+          Left = 336
+          Height = 21
+          Top = 128
+          Width = 88
+          DataField = 'validezcarneta2'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 6
+        end
+        object Label24: TLabel
+          Left = 32
+          Height = 13
+          Top = 160
+          Width = 76
+          Caption = 'Fecha carnet B:'
+          ParentColor = False
+        end
+        object Label25: TLabel
+          Left = 264
+          Height = 13
+          Top = 160
+          Width = 62
+          Caption = 'Válido hasta:'
+          ParentColor = False
+        end
+        object dbeValCarnetB: TDBEdit
+          Left = 336
+          Height = 21
+          Top = 156
+          Width = 88
+          DataField = 'validezcarnetb'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 8
+        end
+        object Label26: TLabel
+          Left = 32
+          Height = 13
+          Top = 188
+          Width = 77
+          Caption = 'Fecha carnet C:'
+          ParentColor = False
+        end
+        object dbeCarnetC: TDBEdit
+          Left = 120
+          Height = 21
+          Top = 184
+          Width = 88
+          DataField = 'fechacarnetc'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 9
+        end
+        object Label27: TLabel
+          Left = 264
+          Height = 13
+          Top = 188
+          Width = 62
+          Caption = 'Válido hasta:'
+          ParentColor = False
+        end
+        object dbeValCarnetC: TDBEdit
+          Left = 336
+          Height = 21
+          Top = 184
+          Width = 88
+          DataField = 'validezcarnetc'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 10
+        end
+        object Label28: TLabel
+          Left = 32
+          Height = 13
+          Top = 216
+          Width = 77
+          Caption = 'Fecha carnet D:'
+          ParentColor = False
+        end
+        object dbeCarnetD: TDBEdit
+          Left = 120
+          Height = 21
+          Top = 212
+          Width = 88
+          DataField = 'fechacarnetd'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 11
+        end
+        object Label29: TLabel
+          Left = 264
+          Height = 13
+          Top = 216
+          Width = 62
+          Caption = 'Válido hasta:'
+          ParentColor = False
+        end
+        object dbeValCarnetD: TDBEdit
+          Left = 336
+          Height = 21
+          Top = 212
+          Width = 88
+          DataField = 'validezcarnetd'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 12
+        end
+        object Label8: TLabel
+          Left = 32
+          Height = 13
+          Top = 36
+          Width = 87
+          Caption = 'Fecha nacimiento:'
+          ParentColor = False
+        end
+        object dbeFNacimiento: TDBEdit
+          Left = 120
+          Height = 21
+          Top = 32
+          Width = 88
+          DataField = 'fechanacimiento'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object dbeCarnetB: TDBEdit
+          Left = 120
+          Height = 21
+          Top = 156
+          Width = 88
+          DataField = 'fechacarnetb'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 7
+        end
+      end
+      object tsPersonales: TTabSheet
+        Caption = 'Personales'
+        ClientHeight = 422
+        ClientWidth = 728
+        object Label32: TLabel
+          Left = 34
+          Height = 13
+          Top = 36
+          Width = 26
+          Caption = 'Alias:'
+          ParentColor = False
+        end
+        object dbeEmail1: TDBEdit
+          Left = 128
+          Height = 21
+          Top = 32
+          Width = 360
+          DataField = 'alias'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label33: TLabel
+          Left = 34
+          Height = 13
+          Top = 76
+          Width = 83
+          Caption = 'Cuenta bancaria:'
+          ParentColor = False
+        end
+        object dbeEmail2: TDBEdit
+          Left = 128
+          Height = 21
+          Top = 72
+          Width = 360
+          DataField = 'cuentabancaria'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label34: TLabel
+          Left = 34
+          Height = 13
+          Top = 116
+          Width = 32
+          Caption = 'E-Mail:'
+          ParentColor = False
+        end
+        object Label44: TLabel
+          Left = 34
+          Height = 13
+          Top = 146
+          Width = 59
+          Caption = 'Página web:'
+          ParentColor = False
+        end
+        object Label46: TLabel
+          Left = 34
+          Height = 13
+          Top = 240
+          Width = 49
+          Caption = 'Profesión:'
+          ParentColor = False
+        end
+        object dbeEmail3: TDBEdit
+          Left = 128
+          Height = 21
+          Top = 112
+          Width = 360
+          DataField = 'email'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object dbeEmail4: TDBEdit
+          Left = 128
+          Height = 21
+          Top = 140
+          Width = 360
+          DataField = 'email'
+          DataSource = dsClientes
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object dbrgFormaContacto: TDBRadioGroup
+          Left = 24
+          Height = 48
+          Top = 176
+          Width = 465
+          AutoFill = True
+          Caption = ' Forma de Contacto '
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 5
+          Columns = 5
+          DataField = 'formacontacto'
+          DataSource = dsClientes
+          Items.Strings = (
+            'Teléfono'
+            'E-Mail'
+            'Carta'
+            'SMS'
+            'WhatsApp'
+          )
+          TabOrder = 4
+          Values.Strings = (
+            'T'
+            'E'
+            'C'
+            'S'
+            'W'
+          )
+        end
+        object gbLOPD: TGroupBox
+          Left = 512
+          Height = 128
+          Top = 24
+          Width = 185
+          Caption = ' LOPD '
+          ClientHeight = 110
+          ClientWidth = 181
+          TabOrder = 5
+          object Label45: TLabel
+            Left = 24
+            Height = 13
+            Top = 16
+            Width = 84
+            Caption = 'Enviar publicidad:'
+            ParentColor = False
+          end
+          object dbcbEnviarPublicidad: TDBCheckBox
+            Left = 122
+            Height = 23
+            Top = 12
+            Width = 26
+            DataField = 'enviarpublicidad'
+            DataSource = dsClientes
+            TabOrder = 0
+            ValueChecked = 'True'
+            ValueUnchecked = 'False'
+          end
+          object Label47: TLabel
+            Left = 24
+            Height = 13
+            Top = 44
+            Width = 72
+            Caption = 'Impreso LOPD:'
+            ParentColor = False
+          end
+          object Label48: TLabel
+            Left = 24
+            Height = 13
+            Top = 72
+            Width = 71
+            Caption = 'Firmado LOPD:'
+            ParentColor = False
+          end
+          object dbcbImpresoLOPD: TDBCheckBox
+            Left = 122
+            Height = 23
+            Top = 40
+            Width = 26
+            DataField = 'impresolopd'
+            DataSource = dsClientes
+            TabOrder = 1
+            ValueChecked = 'True'
+            ValueUnchecked = 'False'
+          end
+          object dbcbFirmadoLOPD: TDBCheckBox
+            Left = 122
+            Height = 23
+            Top = 68
+            Width = 26
+            DataField = 'firmadolopd'
+            DataSource = dsClientes
+            TabOrder = 2
+            ValueChecked = 'True'
+            ValueUnchecked = 'False'
+          end
+        end
+      end
+      object tsTextos: TTabSheet
+        Caption = 'Textos'
+        ClientHeight = 422
+        ClientWidth = 728
+        object Label30: TLabel
+          Left = 8
+          Height = 13
+          Top = 8
+          Width = 42
+          Caption = 'Detalles:'
+          ParentColor = False
+        end
+        object dbmDetalles: TDBMemo
+          Left = 8
+          Height = 186
+          Top = 24
+          Width = 712
+          DataField = 'detalle'
+          DataSource = dsClientes
+          ScrollBars = ssVertical
+          TabOrder = 0
+        end
+        object Label31: TLabel
+          Left = 8
+          Height = 13
+          Top = 216
+          Width = 75
+          Caption = 'Observaciones:'
+          ParentColor = False
+        end
+        object dbmObservaciones: TDBMemo
+          Left = 8
+          Height = 186
+          Top = 232
+          Width = 712
+          DataField = 'observaciones'
+          DataSource = dsClientes
+          ScrollBars = ssVertical
+          TabOrder = 1
+        end
+      end
+      object tsIncidencias: TTabSheet
+        Caption = 'Incidencias'
+        ClientHeight = 422
+        ClientWidth = 728
+        object dbmTelefonosAsistencia3: TDBMemo
+          Left = 8
+          Height = 402
+          Top = 8
+          Width = 712
+          DataField = 'incidencias'
+          DataSource = dsClientes
+          ScrollBars = ssVertical
+          TabOrder = 0
+        end
+      end
+      object tsComercial: TTabSheet
+        Caption = 'Comercial'
+        ClientHeight = 422
+        ClientWidth = 728
+        object dbmTelefonosAsistencia4: TDBMemo
+          Left = 8
+          Height = 402
+          Top = 8
+          Width = 712
+          DataField = 'comercial'
+          DataSource = dsClientes
+          ScrollBars = ssVertical
+          TabOrder = 0
+        end
+      end
+      object tsControl: TTabSheet
+        Caption = 'Control'
+        ClientHeight = 422
+        ClientWidth = 728
+        object gbCreacion: TGroupBox
+          Left = 128
+          Height = 105
+          Top = 32
+          Width = 297
+          Caption = ' Creación '
+          ClientHeight = 87
+          ClientWidth = 293
+          TabOrder = 0
+          object Label40: TLabel
+            Left = 32
+            Height = 13
+            Top = 16
+            Width = 33
+            Caption = 'Fecha:'
+            ParentColor = False
+          end
+          object DBEdit5: TDBEdit
+            Left = 88
+            Height = 21
+            Top = 8
+            Width = 185
+            DataField = 'fechacreacion'
+            DataSource = dsClientes
+            ReadOnly = True
+            CharCase = ecNormal
+            Color = clSilver
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object Label41: TLabel
+            Left = 32
+            Height = 13
+            Top = 44
+            Width = 40
+            Caption = 'Usuario:'
+            ParentColor = False
+          end
+          object DBEdit6: TDBEdit
+            Left = 88
+            Height = 21
+            Top = 36
+            Width = 184
+            DataField = 'usuariocreacion'
+            DataSource = dsClientes
+            ReadOnly = True
+            CharCase = ecNormal
+            Color = clSilver
+            MaxLength = 0
+            TabOrder = 1
+          end
+        end
+        object gbUltimaModificacion: TGroupBox
+          Left = 128
+          Height = 105
+          Top = 160
+          Width = 297
+          Caption = ' Ultima Modificación '
+          ClientHeight = 87
+          ClientWidth = 293
+          TabOrder = 1
+          object Label42: TLabel
+            Left = 32
+            Height = 13
+            Top = 16
+            Width = 33
+            Caption = 'Fecha:'
+            ParentColor = False
+          end
+          object DBEdit7: TDBEdit
+            Left = 88
+            Height = 21
+            Top = 8
+            Width = 185
+            DataField = 'fechaultimamodificacion'
+            DataSource = dsClientes
+            ReadOnly = True
+            CharCase = ecNormal
+            Color = clSilver
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object Label43: TLabel
+            Left = 32
+            Height = 13
+            Top = 44
+            Width = 40
+            Caption = 'Usuario:'
+            ParentColor = False
+          end
+          object DBEdit8: TDBEdit
+            Left = 88
+            Height = 21
+            Top = 36
+            Width = 184
+            DataField = 'usuarioultimamodificacion'
+            DataSource = dsClientes
+            ReadOnly = True
+            CharCase = ecNormal
+            Color = clSilver
+            MaxLength = 0
+            TabOrder = 1
+          end
+        end
+        object dbrgEstado: TDBRadioGroup
+          Left = 512
+          Height = 105
+          Top = 64
+          Width = 140
+          AutoFill = True
+          Caption = ' Estado '
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          DataField = 'estado'
+          DataSource = dsClientes
+          Items.Strings = (
+            'ACTIVO'
+            'INACTIVO'
+            'EMIMINADO LOPD'
+          )
+          TabOrder = 2
+          Values.Strings = (
+            'A'
+            'I'
+            'L'
+          )
+        end
+      end
+      object tsFiltro: TTabSheet
+        Caption = 'Filtro'
+        ClientHeight = 422
+        ClientWidth = 728
+        object Label35: TLabel
+          Left = 8
+          Height = 13
+          Top = 12
+          Width = 41
+          Caption = 'Nombre:'
+          ParentColor = False
+        end
+        object BusqNombre: TEdit
+          Left = 80
+          Height = 21
+          Top = 8
+          Width = 236
+          CharCase = ecUppercase
+          TabOrder = 0
+        end
+        object DBGrid1: TDBGrid
+          Left = 5
+          Height = 324
+          Top = 88
+          Width = 715
+          Color = clWindow
+          Columns = <          
+            item
+              Title.Caption = 'Id.'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              Title.Caption = 'Nombre'
+              Width = 300
+              FieldName = 'nombre'
+            end          
+            item
+              Title.Caption = 'Identificador'
+              Width = 100
+              FieldName = 'identificador'
+            end          
+            item
+              Title.Caption = 'Dirección'
+              Width = 300
+              FieldName = 'direccion'
+            end          
+            item
+              Title.Caption = 'poblacion'
+              Width = 200
+              FieldName = 'poblacion'
+            end          
+            item
+              Title.Caption = 'Telefono1'
+              Width = 100
+              FieldName = 'telefono1'
+            end          
+            item
+              Title.Caption = 'Teléfono2'
+              Width = 100
+              FieldName = 'telefono2'
+            end>
+          DataSource = dsClientes
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object btnAplicarFiltro: TBitBtn
+          Left = 624
+          Height = 30
+          Top = 0
+          Width = 91
+          Caption = 'Aplicar Filtro'
+          OnClick = btnAplicarFiltroClick
+          TabOrder = 2
+        end
+        object Label36: TLabel
+          Left = 8
+          Height = 13
+          Top = 36
+          Width = 65
+          Caption = 'Identificador:'
+          ParentColor = False
+        end
+        object BusqIdentificador: TEdit
+          Left = 80
+          Height = 21
+          Top = 32
+          Width = 236
+          CharCase = ecUppercase
+          TabOrder = 3
+        end
+        object Label37: TLabel
+          Left = 344
+          Height = 13
+          Top = 36
+          Width = 47
+          Caption = 'Dirección:'
+          ParentColor = False
+        end
+        object BusqDireccion: TEdit
+          Left = 416
+          Height = 21
+          Top = 32
+          Width = 236
+          CharCase = ecUppercase
+          TabOrder = 4
+        end
+        object Label38: TLabel
+          Left = 8
+          Height = 13
+          Top = 64
+          Width = 46
+          Caption = 'Teléfono:'
+          ParentColor = False
+        end
+        object BusqTelefono: TEdit
+          Left = 80
+          Height = 21
+          Top = 60
+          Width = 236
+          CharCase = ecUppercase
+          TabOrder = 5
+        end
+        object Label39: TLabel
+          Left = 344
+          Height = 13
+          Top = 64
+          Width = 49
+          Caption = 'Población:'
+          ParentColor = False
+        end
+        object BusqPoblacion: TEdit
+          Left = 416
+          Height = 21
+          Top = 60
+          Width = 236
+          CharCase = ecUppercase
+          TabOrder = 6
+        end
+      end
+    end
+    object Label11: TLabel
+      Left = 576
+      Height = 13
+      Top = 8
+      Width = 70
+      Caption = 'Fecha de Alta:'
+      ParentColor = False
+    end
+    object Label12: TLabel
+      Left = 576
+      Height = 13
+      Top = 32
+      Width = 72
+      Caption = 'Fecha de Baja:'
+      ParentColor = False
+    end
+    object DBEdit4: TDBEdit
+      Left = 654
+      Height = 21
+      Top = 26
+      Width = 75
+      DataField = 'fechabaja'
+      DataSource = dsClientes
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = clSilver
+      MaxLength = 0
+      TabOrder = 3
+    end
+  end
+  object DBEdit3: TDBEdit[2]
+    Left = 654
+    Height = 21
+    Top = 43
+    Width = 75
+    DataField = 'fechaalta'
+    DataSource = dsClientes
+    ReadOnly = True
+    CharCase = ecNormal
+    Color = clSilver
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object dbClientes: TZQuery[3]
+    Connection = formPrincipal.ZConnection1
+    OnCalcFields = dbClientesCalcFields
+    OnNewRecord = dbClientesNewRecord
+    SQL.Strings = (
+      'SELECT * FROM clientes ORDER BY nombre'
+    )
+    Params = <>
+    Left = 608
+    Top = 88
+    object dbClientesid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechaalta: TDateField
+      FieldKind = fkData
+      FieldName = 'fechaalta'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechabaja: TDateField
+      FieldKind = fkData
+      FieldName = 'fechabaja'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesestado: TStringField
+      FieldKind = fkData
+      FieldName = 'estado'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbClientestipodocumento: TStringField
+      FieldKind = fkData
+      FieldName = 'tipodocumento'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbClientesidentificador: TStringField
+      FieldKind = fkData
+      FieldName = 'identificador'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbClientesfechadevalidez: TDateField
+      FieldKind = fkData
+      FieldName = 'fechadevalidez'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesnombre: TStringField
+      FieldKind = fkData
+      FieldName = 'nombre'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesapellido1: TStringField
+      FieldKind = fkData
+      FieldName = 'apellido1'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesapellido2: TStringField
+      FieldKind = fkData
+      FieldName = 'apellido2'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesalias: TStringField
+      FieldKind = fkData
+      FieldName = 'alias'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesdireccion: TStringField
+      FieldKind = fkData
+      FieldName = 'direccion'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object dbClientescodigopostal: TStringField
+      FieldKind = fkData
+      FieldName = 'codigopostal'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 5
+    end
+    object dbClientespoblacion: TStringField
+      FieldKind = fkData
+      FieldName = 'poblacion'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object dbClientesprovincia: TLongintField
+      FieldKind = fkData
+      FieldName = 'provincia'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientestelefono1: TStringField
+      FieldKind = fkData
+      FieldName = 'telefono1'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbClientestelefono2: TStringField
+      FieldKind = fkData
+      FieldName = 'telefono2'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbClientesfax: TStringField
+      FieldKind = fkData
+      FieldName = 'fax'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbClientesmastelefonos: TBlobField
+      FieldKind = fkData
+      FieldName = 'mastelefonos'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechanacimiento: TDateField
+      FieldKind = fkData
+      FieldName = 'fechanacimiento'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechacarneta: TDateField
+      FieldKind = fkData
+      FieldName = 'fechacarneta'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesvalidezcarneta: TDateField
+      FieldKind = fkData
+      FieldName = 'validezcarneta'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechacarneta1: TDateField
+      FieldKind = fkData
+      FieldName = 'fechacarneta1'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesvalidezcarneta1: TDateField
+      FieldKind = fkData
+      FieldName = 'validezcarneta1'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechacarneta2: TDateField
+      FieldKind = fkData
+      FieldName = 'fechacarneta2'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesvalidezcarneta2: TDateField
+      FieldKind = fkData
+      FieldName = 'validezcarneta2'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechacarnetb: TDateField
+      FieldKind = fkData
+      FieldName = 'fechacarnetb'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesvalidezcarnetb: TDateField
+      FieldKind = fkData
+      FieldName = 'validezcarnetb'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechacarnetc: TDateField
+      FieldKind = fkData
+      FieldName = 'fechacarnetc'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesvalidezcarnetc: TDateField
+      FieldKind = fkData
+      FieldName = 'validezcarnetc'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechacarnetd: TDateField
+      FieldKind = fkData
+      FieldName = 'fechacarnetd'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesvalidezcarnetd: TDateField
+      FieldKind = fkData
+      FieldName = 'validezcarnetd'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientescuentabancaria: TStringField
+      FieldKind = fkData
+      FieldName = 'cuentabancaria'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object dbClientesemail: TStringField
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object dbClientesweb: TStringField
+      FieldKind = fkData
+      FieldName = 'web'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object dbClientesformacontacto: TStringField
+      FieldKind = fkData
+      FieldName = 'formacontacto'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbClientesprofesion: TLongintField
+      FieldKind = fkData
+      FieldName = 'profesion'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesdetalle: TBlobField
+      FieldKind = fkData
+      FieldName = 'detalle'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesobservaciones: TBlobField
+      FieldKind = fkData
+      FieldName = 'observaciones'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesincidencias: TBlobField
+      FieldKind = fkData
+      FieldName = 'incidencias'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientescomercial: TBlobField
+      FieldKind = fkData
+      FieldName = 'comercial'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesenviarpublicidad: TStringField
+      FieldKind = fkData
+      FieldName = 'enviarpublicidad'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbClientesimpresolopd: TStringField
+      FieldKind = fkData
+      FieldName = 'impresolopd'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbClientesfirmadolopd: TStringField
+      FieldKind = fkData
+      FieldName = 'firmadolopd'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbClientessexo: TStringField
+      FieldKind = fkData
+      FieldName = 'sexo'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbClientesestadocivil: TStringField
+      FieldKind = fkData
+      FieldName = 'estadocivil'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbClienteshijos: TLongintField
+      FieldKind = fkData
+      FieldName = 'hijos'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientessituacionlaboral: TStringField
+      FieldKind = fkData
+      FieldName = 'situacionlaboral'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbClientesrentaanual: TFloatField
+      FieldKind = fkData
+      FieldName = 'rentaanual'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 14
+    end
+    object dbClientescapacidadahorro: TFloatField
+      FieldKind = fkData
+      FieldName = 'capacidadahorro'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 14
+    end
+    object dbClientescolaborador: TLongintField
+      FieldKind = fkData
+      FieldName = 'colaborador'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesfechacreacion: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'fechacreacion'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesusuariocreacion: TStringField
+      FieldKind = fkData
+      FieldName = 'usuariocreacion'
+      Index = 52
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbClientesfechaultimamodificacion: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'fechaultimamodificacion'
+      Index = 53
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesusuarioultimamodificacion: TStringField
+      FieldKind = fkData
+      FieldName = 'usuarioultimamodificacion'
+      Index = 54
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbClientesnombrecompleto: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'nombrecompleto'
+      Index = 55
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesnombreprovincia: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'nombreprovincia'
+      Index = 56
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsClientes: TDataSource[4]
+    DataSet = dbClientes
+    OnDataChange = ActuallizarEstado
+    Left = 677
+    Top = 88
+  end
+  object dbProvincias: TZQuery[5]
+    Connection = formPrincipal.ZConnection1
+    SQL.Strings = (
+      'SELECT * FROM provincias'
+    )
+    Params = <>
+    Left = 608
+    Top = 144
+    object dbProvinciasid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object dbProvinciasnombre: TStringField
+      FieldKind = fkData
+      FieldName = 'nombre'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+  end
+  object dsProvincias: TDataSource[6]
+    DataSet = dbProvincias
+    Left = 677
+    Top = 144
+  end
+end

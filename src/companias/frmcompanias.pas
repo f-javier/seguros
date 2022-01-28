@@ -1,4 +1,4 @@
-unit formcompanias;
+unit frmCompanias;
 
 {$mode objfpc}{$H+}
 
@@ -6,13 +6,13 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  DbCtrls, Buttons, ComCtrls, StdCtrls, DBGrids, formpadre, db, ZDataset;
+  DbCtrls, Buttons, ComCtrls, StdCtrls, DBGrids, frmPadre, db, ZDataset;
 
 type
 
-  { TformularioCompanias }
+  { TformCompanias }
 
-  TformularioCompanias = class(TformularioPadre)
+  TformCompanias = class(TformPadre)
     btnAplicarFiltro: TBitBtn;
     dbCompaniasadmincontacto: TStringField;
     dbCompaniasadminemail: TStringField;
@@ -166,26 +166,26 @@ type
   end;
 
 var
-  formularioCompanias: TformularioCompanias;
+  formCompanias: TformCompanias;
 
 implementation
 
 {$R *.lfm}
 
-{ TformularioCompanias }
+{ TformCompanias }
 
-procedure TformularioCompanias.FormCreate(Sender: TObject);
+procedure TformCompanias.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
   dbCompanias.Open;
 end;
 
-procedure TformularioCompanias.FormDestroy(Sender: TObject);
+procedure TformCompanias.FormDestroy(Sender: TObject);
 begin
   dbCompanias.Close;
 end;
 
-procedure TformularioCompanias.btnAplicarFiltroClick(Sender: TObject);
+procedure TformCompanias.btnAplicarFiltroClick(Sender: TObject);
 begin
   if dbCompanias.Active then dbCompanias.Close;
   if btnAplicarFiltro.Caption='Aplicar Filtro' then begin
@@ -204,7 +204,7 @@ begin
   end;
 end;
 
-procedure TformularioCompanias.dbCompaniasBeforePost(DataSet: TDataSet);
+procedure TformCompanias.dbCompaniasBeforePost(DataSet: TDataSet);
 begin
   if (dsCompanias.State in [dsInsert]) then begin
      dbCompaniasFechacreacion.Value:=now;

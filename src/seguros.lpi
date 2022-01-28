@@ -9,6 +9,7 @@
       <Title Value="seguros"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
@@ -36,40 +37,67 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="5">
+    <Units Count="8">
       <Unit0>
         <Filename Value="seguros.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="formprincipal.pas"/>
+        <Filename Value="frmprincipal.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="formularioPrincipal"/>
+        <ComponentName Value="formPrincipal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="formPrincipal"/>
+        <UnitName Value="frmPrincipal"/>
       </Unit1>
       <Unit2>
-        <Filename Value="formpadre.pas"/>
+        <Filename Value="frmpadre.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="formularioPadre"/>
+        <ComponentName Value="formPadre"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frmPadre"/>
       </Unit2>
       <Unit3>
-        <Filename Value="ramos\formramos.pas"/>
+        <Filename Value="ramos\frmramos.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="formularioRamos"/>
+        <ComponentName Value="formRamos"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frmRamos"/>
       </Unit3>
       <Unit4>
-        <Filename Value="companias\formcompanias.pas"/>
+        <Filename Value="companias\frmcompanias.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="formularioCompanias"/>
+        <ComponentName Value="formCompanias"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frmCompanias"/>
       </Unit4>
+      <Unit5>
+        <Filename Value="clientes\frmclientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="formClientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frmClientes"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="maestros\frmprofesiones.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="formProfesiones"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frmProfesiones"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="maestros\frmformasdepago.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="formFormasdePago"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frmFormasdePago"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -80,10 +108,13 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="ramos;companias"/>
+      <OtherUnitFiles Value="ramos;companias;clientes;maestros"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>

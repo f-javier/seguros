@@ -1,4 +1,4 @@
-unit formramos;
+unit frmRamos;
 
 {$mode objfpc}{$H+}
 
@@ -6,13 +6,13 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  DBCtrls, Buttons, ComCtrls, StdCtrls, DBGrids, formpadre, DB, ZDataset;
+  DBCtrls, Buttons, ComCtrls, StdCtrls, DBGrids, frmPadre, DB, ZDataset;
 
 type
 
-  { TformularioRamos }
+  { TformRamos }
 
-  TformularioRamos = class(TformularioPadre)
+  TformRamos = class(TformPadre)
     btnAplicarFiltro: TBitBtn;
     BusqNombre: TEdit;
     dbeComision: TDBEdit;
@@ -21,13 +21,13 @@ type
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
     DBEdit4: TDBEdit;
+    dbeId: TDBEdit;
+    dbeNombre: TDBEdit;
     DBGrid1: TDBGrid;
+    dblcCompania: TDBLookupComboBox;
     dblcRamoDEC: TDBLookupComboBox;
     dsRamosDEC: TDataSource;
     dsCompanias: TDataSource;
-    dbeId: TDBEdit;
-    dbeNombre: TDBEdit;
-    dblcCompania: TDBLookupComboBox;
     dbRamoscomision: TFloatField;
     dbRamoscomisionagente: TFloatField;
     dbRamoscompaniaid: TLongintField;
@@ -52,15 +52,15 @@ type
     Label37: TLabel;
     Label38: TLabel;
     Label39: TLabel;
-    Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
+    Panel1: TPanel;
     pc: TPageControl;
-    tsFiltro: TTabSheet;
     tsControl: TTabSheet;
-    tsDatosEconomicos: TTabSheet;
     tsDatos: TTabSheet;
+    tsDatosEconomicos: TTabSheet;
+    tsFiltro: TTabSheet;
     procedure btnAplicarFiltroClick(Sender: TObject);
     procedure dbRamosBeforePost(DataSet: TDataSet);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -72,15 +72,15 @@ type
   end;
 
 var
-  formularioRamos: TformularioRamos;
+  formRamos: TformRamos;
 
 implementation
 
 {$R *.lfm}
 
-{ TformularioRamos }
+{ TformRamos }
 
-procedure TformularioRamos.FormCreate(Sender: TObject);
+procedure TformRamos.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
   dbRamos.Open;
@@ -88,7 +88,7 @@ begin
   dbRamosDEC.Open;
 end;
 
-procedure TformularioRamos.FormClose(Sender: TObject;
+procedure TformRamos.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
   dbRamos.Close;
@@ -96,7 +96,7 @@ begin
   dbRamosDEC.Close;
 end;
 
-procedure TformularioRamos.btnAplicarFiltroClick(Sender: TObject);
+procedure TformRamos.btnAplicarFiltroClick(Sender: TObject);
 begin
   if dbRamos.Active then dbRamos.Close;
   if btnAplicarFiltro.Caption='Aplicar Filtro' then begin
@@ -115,7 +115,7 @@ begin
   end;
 end;
 
-procedure TformularioRamos.dbRamosBeforePost(DataSet: TDataSet);
+procedure TformRamos.dbRamosBeforePost(DataSet: TDataSet);
 begin
   if (dsRamos.State in [dsInsert]) then begin
      dbRamosFechacreacion.Value:=now;

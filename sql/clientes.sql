@@ -19,7 +19,6 @@ CREATE TABLE `clientes` (
 	`fax` VARCHAR(15) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci',
 	`mastelefonos` BLOB NULL,
 	`fechanacimiento` DATE NULL DEFAULT NULL,
-	`onomastica` DATE NULL DEFAULT NULL,
 	`fechacarneta` DATE NULL DEFAULT NULL,
 	`validezcarneta` DATE NULL DEFAULT NULL,
 	`fechacarneta1` DATE NULL DEFAULT NULL,
@@ -52,9 +51,9 @@ CREATE TABLE `clientes` (
 	`capacidadahorro` DECIMAL(12,2) NULL DEFAULT NULL,
 	`colaborador` INT(11) NULL DEFAULT NULL,
 	`fechacreacion` DATETIME NULL DEFAULT NULL,
-	`usuariocreacion` VARCHAR(15) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci',
+	`usuariocreacion` VARCHAR(25) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci',
 	`fechaultimamodificacion` DATETIME NULL DEFAULT NULL,
-	`usuarioultimamodificacion` VARCHAR(15) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci'
+	`usuarioultimamodificacion` VARCHAR(25) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci'
 )
 COLLATE='utf8_spanish_ci'
 ENGINE=InnoDB;

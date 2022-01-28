@@ -1,14 +1,14 @@
-object formularioPadre: TformularioPadre
+object formPadre: TformPadre
   Left = 248
   Height = 472
   Top = 128
   Width = 636
-  Caption = 'formularioPadre'
+  Caption = 'formPadre'
   ClientHeight = 472
   ClientWidth = 636
   FormStyle = fsStayOnTop
   Position = poDesktopCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.10.0'
   object PanelBotonera: TPanel
     Left = 0
     Height = 40
