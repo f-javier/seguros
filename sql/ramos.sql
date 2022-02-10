@@ -1,16 +1,24 @@
-CREATE TABLE `ramos` (
-	`id` INT(10) NOT NULL AUTO_INCREMENT,
-	`nombre` VARCHAR(35) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci',
-	`companiaid` INT(10) NULL DEFAULT NULL,
-	`comision` DECIMAL(5,2) NULL DEFAULT NULL,
-	`comisionagente` DECIMAL(5,2) NULL DEFAULT NULL,
-	`ramodecid` INT(10) NULL DEFAULT NULL,
-	`fechacreacion` DATETIME NULL DEFAULT NULL,
-	`usuariocreacion` VARCHAR(15) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci',
-	`fechaultimamodificacion` DATETIME NULL DEFAULT NULL,
-	`usuarioultimamodificacion` VARCHAR(15) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci',
-	PRIMARY KEY (`id`)
-)
-COLLATE='utf8_spanish_ci'
-ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS `ramos` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(35) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `companiaid` int(10) DEFAULT NULL,
+  `comision` decimal(5,2) DEFAULT NULL,
+  `comisionagente` decimal(5,2) DEFAULT NULL,
+  `ramodecid` int(10) DEFAULT NULL,
+  `fechacreacion` datetime DEFAULT NULL,
+  `usuariocreacion` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fechaultimamodificacion` datetime DEFAULT NULL,
+  `usuarioultimamodificacion` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+CREATE TRIGGER `ramosBI` BEFORE INSERT ON `ramos` FOR EACH ROW BEGIN
+  SET NEW.fechacreacion = NOW(),
+      NEW.usuariocreacion = USER();
+END;
+
+CREATE TRIGGER `ramosBU` BEFORE UPDATE ON `ramos` FOR EACH ROW BEGIN
+  SET NEW.fechaultimamodificacion = NOW(),
+      NEW.usuarioultimamodificacion = USER();
+END;
 

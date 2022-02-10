@@ -1,9 +1,7 @@
-CREATE TABLE `ramos_dec` (
-	`id` INT(10) NOT NULL AUTO_INCREMENT,
-	`nombre` VARCHAR(30) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci',
-	`tipo_dec` INT(10) NULL DEFAULT NULL,
-	PRIMARY KEY (`id`)
-)
-COLLATE='utf8_spanish_ci'
-ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS `ramos_dec` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tipo_dec` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 

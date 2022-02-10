@@ -1,11 +1,8 @@
-CREATE TABLE `provincias` (
-	`id` INT(10) NOT NULL AUTO_INCREMENT,
-	`nombre` VARCHAR(30) NULL DEFAULT NULL COLLATE 'utf8_spanish_ci',
-	PRIMARY KEY (`id`)
-)
-COLLATE='utf8_spanish_ci'
-ENGINE=InnoDB
-AUTO_INCREMENT=53;
+CREATE TABLE IF NOT EXISTS `provincias` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 INSERT INTO `provincias` (`id`, `nombre`) VALUES
 	(1, 'Álava'),
