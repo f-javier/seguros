@@ -4,8 +4,8 @@ inherited formProfesiones: TformProfesiones
   Width = 479
   Caption = 'Profesiones'
   ClientWidth = 479
-  OnClose = FormClose
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   inherited PanelBotonera: TPanel
     Width = 479
     ClientWidth = 479

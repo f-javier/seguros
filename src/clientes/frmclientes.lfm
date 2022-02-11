@@ -4,8 +4,8 @@ inherited formClientes: TformClientes
   Caption = 'Clientes'
   ClientHeight = 553
   ClientWidth = 757
-  OnClose = FormClose
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   inherited PanelBotonera: TPanel
     Width = 757
     ClientWidth = 757

@@ -1,0 +1,10 @@
+object formConexionMySQL: TformConexionMySQL
+  Left = 391
+  Height = 240
+  Top = 273
+  Width = 320
+  BorderStyle = bsNone
+  Caption = 'Conexión MySQL/MariaDB'
+  Position = poDesktopCenter
+  LCLVersion = '2.0.10.0'
+end

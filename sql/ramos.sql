@@ -6,9 +6,9 @@ CREATE TABLE IF NOT EXISTS `ramos` (
   `comisionagente` decimal(5,2) DEFAULT NULL,
   `ramodecid` int(10) DEFAULT NULL,
   `fechacreacion` datetime DEFAULT NULL,
-  `usuariocreacion` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `usuariocreacion` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   `fechaultimamodificacion` datetime DEFAULT NULL,
-  `usuarioultimamodificacion` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `usuarioultimamodificacion` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 

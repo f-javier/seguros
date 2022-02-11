@@ -195,8 +195,8 @@ type
     procedure btnAplicarFiltroClick(Sender: TObject);
     procedure dbClientesCalcFields(DataSet: TDataSet);
     procedure dbClientesNewRecord(DataSet: TDataSet);
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
 
   public
@@ -219,8 +219,7 @@ begin
   dbProvincias.Open;
 end;
 
-procedure TformClientes.FormClose(Sender: TObject; var CloseAction: TCloseAction
-  );
+procedure TformClientes.FormDestroy(Sender: TObject);
 begin
   dbClientes.Close;
   dbProvincias.Close;

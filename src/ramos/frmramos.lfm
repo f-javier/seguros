@@ -6,8 +6,8 @@ inherited formRamos: TformRamos
   Caption = 'Ramos'
   ClientHeight = 448
   ClientWidth = 585
-  OnClose = FormClose
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   inherited PanelBotonera: TPanel
     Width = 585
     ClientWidth = 585

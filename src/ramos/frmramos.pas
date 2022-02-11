@@ -63,8 +63,8 @@ type
     tsFiltro: TTabSheet;
     procedure btnAplicarFiltroClick(Sender: TObject);
     procedure dbRamosBeforePost(DataSet: TDataSet);
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     { private declarations }
   public
@@ -88,8 +88,7 @@ begin
   dbRamosDEC.Open;
 end;
 
-procedure TformRamos.FormClose(Sender: TObject;
-  var CloseAction: TCloseAction);
+procedure TformRamos.FormDestroy(Sender: TObject);
 begin
   dbRamos.Close;
   dbCompanias.Close;

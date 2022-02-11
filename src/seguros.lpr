@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, frmPrincipal, frmPadre, frmCompanias, frmRamos, zcomponent,
-  frmClientes, frmProfesiones, frmFormasdePago
+  frmClientes, frmProfesiones, frmFormasdePago, frmconexionmysql
   { you can add units after this };
 
 {$R *.res}
@@ -17,6 +17,7 @@ begin
   RequireDerivedFormResource:=True;
   Application.Initialize;
   Application.CreateForm(TformPrincipal, formPrincipal);
+  Application.CreateForm(TformConexionMySQL, formConexionMySQL);
   Application.Run;
 end.
 

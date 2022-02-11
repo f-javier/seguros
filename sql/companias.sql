@@ -37,9 +37,9 @@ CREATE TABLE IF NOT EXISTS `companias` (
   `peritofax` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
   `peritoemail` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `fechacreacion` datetime DEFAULT NULL,
-  `usuariocreacion` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `usuariocreacion` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   `fechaultimamodificacion` datetime DEFAULT NULL,
-  `usuarioultimamodificacion` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `usuarioultimamodificacion` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 

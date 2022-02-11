@@ -37,7 +37,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="seguros.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -98,6 +98,12 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frmFormasdePago"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="configuracion\frmconexionmysql.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="formConexionMySQL"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -108,7 +114,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="ramos;companias;clientes;maestros"/>
+      <OtherUnitFiles Value="ramos;companias;clientes;maestros;configuracion"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

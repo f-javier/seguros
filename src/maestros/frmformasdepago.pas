@@ -44,8 +44,8 @@ type
     tsDatos: TTabSheet;
     tsFiltro: TTabSheet;
     procedure btnAplicarFiltroClick(Sender: TObject);
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
 
   public
@@ -67,8 +67,7 @@ begin
   dbFormasPago.Open;
 end;
 
-procedure TformFormasdePago.FormClose(Sender: TObject;
-  var CloseAction: TCloseAction);
+procedure TformFormasdePago.FormDestroy(Sender: TObject);
 begin
   dbFormasPago.Close;
 end;

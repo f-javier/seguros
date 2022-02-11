@@ -2,12 +2,13 @@ inherited formFormasdePago: TformFormasdePago
   Width = 479
   Caption = 'Formas de Pago'
   ClientWidth = 479
-  OnClose = FormClose
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   inherited PanelBotonera: TPanel
     Width = 479
     ClientWidth = 479
     inherited DBNavigator1: TDBNavigator
+      DataSource = dsFormasPago
       Hints.Strings = (      )
     end
     inherited sbBuscar: TSpeedButton
