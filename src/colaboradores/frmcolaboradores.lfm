@@ -1,0 +1,11 @@
+inherited formColaboradores: TformColaboradores
+  Caption = 'Colaboradores'
+  inherited PanelBotonera: TPanel
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = (      )
+    end
+    inherited sbBuscar: TSpeedButton
+      Visible = False
+    end
+  end
+end

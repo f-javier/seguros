@@ -191,7 +191,7 @@ type
     tsFechas: TTabSheet;
     tsDatos: TTabSheet;
     dbProvincias: TZQuery;
-    procedure ActuallizarEstado(Sender: TObject; Field: TField);
+    procedure ActualizarEstado(Sender: TObject; Field: TField);
     procedure btnAplicarFiltroClick(Sender: TObject);
     procedure dbClientesCalcFields(DataSet: TDataSet);
     procedure dbClientesNewRecord(DataSet: TDataSet);
@@ -276,7 +276,7 @@ begin
   end;
 end;
 
-procedure TformClientes.ActuallizarEstado(Sender: TObject; Field: TField);
+procedure TformClientes.ActualizarEstado(Sender: TObject; Field: TField);
 begin
   if dbClientesEstado.AsString='L' then begin
      lEstado.Font.Color:=clRed;

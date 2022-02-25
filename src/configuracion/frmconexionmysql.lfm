@@ -1,10 +1,112 @@
 object formConexionMySQL: TformConexionMySQL
-  Left = 391
+  Left = 390
   Height = 240
-  Top = 273
+  Top = 275
   Width = 320
-  BorderStyle = bsNone
+  BorderStyle = bsDialog
   Caption = 'Conexión MySQL/MariaDB'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
   Position = poDesktopCenter
   LCLVersion = '2.0.10.0'
+  object Label1: TLabel
+    Left = 80
+    Height = 13
+    Top = 36
+    Width = 44
+    Caption = 'Servidor:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 80
+    Height = 13
+    Top = 64
+    Width = 36
+    Caption = 'Puerto:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 80
+    Height = 13
+    Top = 92
+    Width = 72
+    Caption = 'Base de datos:'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 80
+    Height = 13
+    Top = 120
+    Width = 40
+    Caption = 'Usuario:'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 80
+    Height = 13
+    Top = 148
+    Width = 60
+    Caption = 'Contraseña:'
+    ParentColor = False
+  end
+  object eServidor: TEdit
+    Left = 160
+    Height = 21
+    Top = 32
+    Width = 80
+    TabOrder = 0
+  end
+  object ePuerto: TEdit
+    Left = 160
+    Height = 21
+    Top = 60
+    Width = 80
+    TabOrder = 1
+  end
+  object eBaseDatos: TEdit
+    Left = 160
+    Height = 21
+    Top = 88
+    Width = 80
+    TabOrder = 2
+  end
+  object eUsuario: TEdit
+    Left = 160
+    Height = 21
+    Top = 116
+    Width = 80
+    TabOrder = 3
+  end
+  object eContrasena: TEdit
+    Left = 160
+    Height = 21
+    Top = 144
+    Width = 80
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 4
+  end
+  object btnAceptar: TBitBtn
+    Left = 48
+    Height = 34
+    Top = 182
+    Width = 103
+    Caption = '&Aceptar'
+    Kind = bkAll
+    ModalResult = 8
+    OnClick = btnAceptarClick
+    TabOrder = 5
+  end
+  object btnCancelar: TBitBtn
+    Left = 176
+    Height = 34
+    Top = 182
+    Width = 103
+    Caption = '&Cancelar'
+    Kind = bkNoToAll
+    ModalResult = 9
+    OnClick = btnCancelarClick
+    TabOrder = 6
+  end
 end

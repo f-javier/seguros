@@ -4,65 +4,145 @@ object formPrincipal: TformPrincipal
   Top = 128
   Width = 667
   Caption = 'Agencias/Corredurías de Seguros'
+  ClientHeight = 474
+  ClientWidth = 667
   Menu = menuPrincipal
+  OnCreate = FormCreate
   Position = poDesktopCenter
   LCLVersion = '2.0.10.0'
   WindowState = wsMaximized
+  object Panel1: TPanel
+    Left = 0
+    Height = 66
+    Top = 0
+    Width = 667
+    Align = alTop
+    ClientHeight = 66
+    ClientWidth = 667
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 488
+      Height = 64
+      Top = 1
+      Width = 178
+      Align = alRight
+      BevelInner = bvLowered
+      ClientHeight = 64
+      ClientWidth = 178
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 22
+        Height = 13
+        Top = 12
+        Width = 99
+        Caption = 'Conexión al Servidor'
+        ParentColor = False
+      end
+      object lConexion: TLabel
+        Left = 8
+        Height = 24
+        Top = 28
+        Width = 128
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'OFFLINE'
+        Font.Color = clRed
+        Font.Height = -20
+        ParentColor = False
+        ParentFont = False
+      end
+      object sbConexionOnOff: TSpeedButton
+        Left = 136
+        Height = 33
+        Top = 16
+        Width = 32
+        OnClick = sbConexionOnOffClick
+      end
+    end
+  end
   object menuPrincipal: TMainMenu
     Left = 216
     Top = 168
     object MenuArchivo: TMenuItem
       Caption = '&Archivo'
-      object OptionItemAyuda: TMenuItem
+      object OptionAyuda: TMenuItem
         Caption = '&Ayuda'
         ShortCut = 112
       end
       object MenuItem3: TMenuItem
         Caption = '-'
       end
-      object OptionItemImpresora: TMenuItem
+      object OptionImpresora: TMenuItem
         Caption = 'Configurar &Impresora'
+      end
+      object OpcionConexionMySQL: TMenuItem
+        Caption = 'Configurar Conexión MySQL'
+        OnClick = OpcionConexionMySQLClick
       end
       object MenuItem4: TMenuItem
         Caption = '-'
       end
-      object OptionItemAcercade: TMenuItem
+      object OptionAcercade: TMenuItem
         Caption = 'Acerca &de...'
       end
       object MenuItem5: TMenuItem
         Caption = '-'
       end
-      object OptionItemSalir: TMenuItem
+      object OptionSalir: TMenuItem
         Caption = '&Salir'
         ShortCut = 32883
-        OnClick = OptionItemSalirClick
+        OnClick = OptionSalirClick
       end
     end
     object MenuMaestros: TMenuItem
       Caption = '&Maestros'
-      object OpcionItemCompanias: TMenuItem
+      object OpcionCompanias: TMenuItem
         Caption = '&Compañías'
-        OnClick = OpcionItemCompaniasClick
+        OnClick = OpcionCompaniasClick
       end
-      object OpcionItemRamos: TMenuItem
+      object OpcionRamos: TMenuItem
         Caption = '&Ramos'
-        OnClick = OpcionItemRamosClick
+        OnClick = OpcionRamosClick
       end
-      object OpcionItemProfesiones: TMenuItem
+      object OpcionProfesiones: TMenuItem
         Caption = 'Pro&fesiones'
-        OnClick = OpcionItemProfesionesClick
+        OnClick = OpcionProfesionesClick
       end
-      object OpcionItemFormasPago: TMenuItem
+      object OpcionFormasPago: TMenuItem
         Caption = 'Formas de Pago'
-        OnClick = OpcionItemFormasPagoClick
+        OnClick = OpcionFormasPagoClick
       end
-      object MenuItem1: TMenuItem
-        Caption = '-'
+      object OpcionColaboradores: TMenuItem
+        Caption = 'Colaboradores'
+        OnClick = OpcionColaboradoresClick
       end
-      object OpcionItemClientes: TMenuItem
+    end
+    object MenuClientes: TMenuItem
+      Caption = 'Clientes'
+      object OpcionClientes: TMenuItem
         Caption = 'Clientes'
         ShortCut = 16468
-        OnClick = OpcionItemClientesClick
+        OnClick = OpcionClientesClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object MenuListadoClientes: TMenuItem
+        Caption = 'Listados'
+      end
+    end
+    object MenuPolizas: TMenuItem
+      Caption = 'Pólizas'
+      object OpcionPolizas: TMenuItem
+        Caption = 'Pólizas'
+        ShortCut = 16464
+        OnClick = OpcionPolizasClick
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object MenuListadosPolizas: TMenuItem
+        Caption = 'Listados'
       end
     end
   end
@@ -74,7 +154,8 @@ object formPrincipal: TformPrincipal
       'codepage=utf8'
       'AutoEncodeStrings=ON'
     )
-    Connected = True
+    AfterConnect = ZConnection1AfterConnect
+    AfterDisconnect = ZConnection1AfterDisconnect
     HostName = 'localhost'
     Port = 0
     Database = 'seguros'

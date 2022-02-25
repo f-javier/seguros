@@ -1722,7 +1722,7 @@ inherited formClientes: TformClientes
   end
   object dsClientes: TDataSource[4]
     DataSet = dbClientes
-    OnDataChange = ActuallizarEstado
+    OnDataChange = ActualizarEstado
     Left = 677
     Top = 88
   end

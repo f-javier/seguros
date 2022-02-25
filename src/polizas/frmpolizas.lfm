@@ -1,0 +1,11 @@
+inherited formPolizas: TformPolizas
+  Caption = 'Pólizas'
+  inherited PanelBotonera: TPanel
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = (      )
+    end
+    inherited sbBuscar: TSpeedButton
+      Visible = False
+    end
+  end
+end
