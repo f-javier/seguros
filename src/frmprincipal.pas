@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  ExtCtrls, StdCtrls, Buttons, ZConnection, IniFiles,
+  ExtCtrls, StdCtrls, Buttons, ZConnection, IniFiles, LCLType,
   frmCompanias, frmRamos, frmClientes, frmProfesiones, frmFormasdePago,
   frmConexionMySQL, frmColaboradores, frmPolizas;
 
@@ -80,15 +80,22 @@ end;
 
 procedure TformPrincipal.sbConexionOnOffClick(Sender: TObject);
 var
-  cont : integer;
   ClaveUsuario: string;
   FicheroIni: TIniFile;
 begin
+  ClaveUsuario:='';
+
   if ZConnection1.Connected then begin
+     // Cierre de TODOS los formularios abiertos, antes de desconectar de la BBDD
+     if Assigned(formCompanias) then formCompanias.Close;
+     if Assigned(formRamos) then formRamos.Close;
+     if Assigned(formProfesiones) then formProfesiones.Close;
+     if Assigned(formFormasdePago) then formFormasdePago.Close;
+     if Assigned(formColaboradores) then formColaboradores.Close;
+     if Assigned(formClientes) then formClientes.Close;
+     if Assigned(formPolizas) then formPolizas.Close;
+
      ZConnection1.Connected:=False;
-//     for cont:=0 to Self.ComponentCount do begin
-//         if Self.Components[cont] is TForm then showmessage('0') ;
-//     end;
   end else begin
       if FileExists(ExtractFilePath(ParamStr(0))+'seguros.ini') then begin
          FicheroIni:=TIniFile.Create(ExtractFilePath(ParamStr(0))+'seguros.ini');
@@ -101,9 +108,8 @@ begin
             FreeAndNil(FicheroIni);
          end;
       end;
-      if InputQuery('Conexión al servidor', 'Introduzca su Clave de Acceso', TRUE, ClaveUsuario) then begin
+      if InputQuery('Conexión al servidor', 'Introduzca su Clave de Acceso', TRUE, ClaveUsuario) then
          ZConnection1.Password := ClaveUsuario;
-      end;
 
       ZConnection1.Connected:=True;
   end;
@@ -127,8 +133,9 @@ begin
      if not Assigned(formCompanias) then
         formCompanias := TFormCompanias.Create(Application);
      formCompanias.Show;
-  else begin end
-       ShowMessageDlg(
+  end else begin
+       Application.MessageBox('Base de Datos NO CONECTADA'+CHR(13)+'Establezca primero la conexión',
+                              '¡Atención!', MB_ICONHAND);
   end;
 end;
 
@@ -138,6 +145,9 @@ begin
      if not Assigned(formProfesiones) then
         formProfesiones := TFormProfesiones.Create(Application);
      formProfesiones.Show;
+  end else begin
+       Application.MessageBox('Base de Datos NO CONECTADA'+CHR(13)+'Establezca primero la conexión',
+                              '¡Atención!', MB_ICONHAND);
   end;
 end;
 
@@ -147,6 +157,9 @@ begin
      if not Assigned(formFormasdePago) then
         formFormasdePago := TFormFormasdePago.Create(Application);
      formFormasdePago.Show;
+  end else begin
+       Application.MessageBox('Base de Datos NO CONECTADA'+CHR(13)+'Establezca primero la conexión',
+                              '¡Atención!', MB_ICONHAND);
   end;
 end;
 
@@ -156,6 +169,9 @@ begin
      if not Assigned(formPolizas) then
         formPolizas := TFormPolizas.Create(Application);
      formPolizas.Show;
+  end else begin
+       Application.MessageBox('Base de Datos NO CONECTADA'+CHR(13)+'Establezca primero la conexión',
+                              '¡Atención!', MB_ICONHAND);
   end;
 end;
 
@@ -165,6 +181,9 @@ begin
      if not Assigned(formConexionMySQL) then
         formConexionMySQL := TFormConexionMySQL.Create(Application);
      formConexionMySQL.Show;
+  end else begin
+       Application.MessageBox('Base de Datos CONECTADA'+CHR(13)+'Desconecte primero la conexión',
+                              '¡Atención!', MB_ICONHAND);
   end;
 end;
 
@@ -174,6 +193,9 @@ begin
      if not Assigned(formColaboradores) then
         formColaboradores := TFormColaboradores.Create(Application);
      formColaboradores.Show;
+  end else begin
+       Application.MessageBox('Base de Datos NO CONECTADA'+CHR(13)+'Establezca primero la conexión',
+                              '¡Atención!', MB_ICONHAND);
   end;
 end;
 
@@ -183,6 +205,9 @@ begin
      if not Assigned(formClientes) then
         formClientes := TFormClientes.Create(Application);
      formClientes.Show;
+  end else begin
+       Application.MessageBox('Base de Datos NO CONECTADA'+CHR(13)+'Establezca primero la conexión',
+                              '¡Atención!', MB_ICONHAND);
   end;
 end;
 
@@ -197,6 +222,9 @@ begin
      if not Assigned(formRamos) then
         formRamos := TFormRamos.Create(Application);
      formRamos.Show;
+  end else begin
+       Application.MessageBox('Base de Datos NO CONECTADA'+CHR(13)+'Establezca primero la conexión',
+                              '¡Atención!', MB_ICONHAND);
   end;
 end;
 
