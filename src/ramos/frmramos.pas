@@ -62,7 +62,6 @@ type
     tsDatosEconomicos: TTabSheet;
     tsFiltro: TTabSheet;
     procedure btnAplicarFiltroClick(Sender: TObject);
-    procedure dbRamosBeforePost(DataSet: TDataSet);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -111,17 +110,6 @@ begin
       BusqNombre.Text:='';
       BusqNombre.Color:=clDefault;
       btnAplicarFiltro.Caption:='Aplicar Filtro';
-  end;
-end;
-
-procedure TformRamos.dbRamosBeforePost(DataSet: TDataSet);
-begin
-  if (dsRamos.State in [dsInsert]) then begin
-     dbRamosFechacreacion.Value:=now;
-     dbRamosUsuariocreacion.Value:=dbRamos.Connection.User;
-  end else begin
-    dbRamosFechaultimamodificacion.Value:=now;
-    dbRamosUsuarioultimamodificacion.Value:=dbCompanias.Connection.User;
   end;
 end;
 

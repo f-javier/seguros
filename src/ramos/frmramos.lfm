@@ -77,8 +77,8 @@ inherited formRamos: TformRamos
       Height = 344
       Top = 48
       Width = 568
-      ActivePage = tsDatos
-      TabIndex = 0
+      ActivePage = tsControl
+      TabIndex = 2
       TabOrder = 2
       object tsDatos: TTabSheet
         Caption = 'Datos'
@@ -338,11 +338,11 @@ inherited formRamos: TformRamos
   end
   object dbRamos: TZQuery[2]
     Connection = formPrincipal.ZConnection1
-    BeforePost = dbRamosBeforePost
     SQL.Strings = (
       'SELECT * FROM ramos ORDER BY nombre'
     )
     Params = <>
+    DataSource = dsCompanias
     Left = 448
     Top = 48
     object dbRamosid: TLongintField
@@ -412,6 +412,7 @@ inherited formRamos: TformRamos
       Required = False
     end
     object dbRamosusuariocreacion: TStringField
+      DisplayWidth = 25
       FieldKind = fkData
       FieldName = 'usuariocreacion'
       Index = 7
@@ -431,6 +432,7 @@ inherited formRamos: TformRamos
       Required = False
     end
     object dbRamosusuarioultimamodificacion: TStringField
+      DisplayWidth = 25
       FieldKind = fkData
       FieldName = 'usuarioultimamodificacion'
       Index = 9

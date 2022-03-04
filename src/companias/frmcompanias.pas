@@ -156,7 +156,6 @@ type
     tsDatos: TTabSheet;
     dbCompanias: TZQuery;
     procedure btnAplicarFiltroClick(Sender: TObject);
-    procedure dbCompaniasBeforePost(DataSet: TDataSet);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -201,17 +200,6 @@ begin
       BusqNombre.Text:='';
       BusqNombre.Color:=clDefault;
       btnAplicarFiltro.Caption:='Aplicar Filtro';
-  end;
-end;
-
-procedure TformCompanias.dbCompaniasBeforePost(DataSet: TDataSet);
-begin
-  if (dsCompanias.State in [dsInsert]) then begin
-     dbCompaniasFechacreacion.Value:=now;
-     dbCompaniasUsuariocreacion.Value:=dbCompanias.Connection.User;
-  end else begin
-    dbCompaniasFechaultimamodificacion.Value:=now;
-    dbCompaniasUsuarioultimamodificacion.Value:=dbCompanias.Connection.User;
   end;
 end;
 

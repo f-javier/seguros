@@ -963,7 +963,6 @@ inherited formCompanias: TformCompanias
   end
   object dbCompanias: TZQuery[3]
     Connection = formPrincipal.ZConnection1
-    BeforePost = dbCompaniasBeforePost
     SQL.Strings = (
       'SELECT * FROM companias ORDER BY nombre'
     )
@@ -1349,6 +1348,7 @@ inherited formCompanias: TformCompanias
       Required = False
     end
     object dbCompaniasusuariocreacion: TStringField
+      DisplayWidth = 25
       FieldKind = fkData
       FieldName = 'usuariocreacion'
       Index = 38
@@ -1368,6 +1368,7 @@ inherited formCompanias: TformCompanias
       Required = False
     end
     object dbCompaniasusuarioultimamodificacion: TStringField
+      DisplayWidth = 25
       FieldKind = fkData
       FieldName = 'usuarioultimamodificacion'
       Index = 40

@@ -61,7 +61,7 @@ bin/
 
 # Material complementario
 capturas/
-
+documentacion/
 
 # Delphi compiler-generated binaries (safe to delete)
 *.exe

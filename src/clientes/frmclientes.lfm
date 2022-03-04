@@ -1673,6 +1673,7 @@ inherited formClientes: TformClientes
       Required = False
     end
     object dbClientesusuariocreacion: TStringField
+      DisplayWidth = 25
       FieldKind = fkData
       FieldName = 'usuariocreacion'
       Index = 52
@@ -1692,6 +1693,7 @@ inherited formClientes: TformClientes
       Required = False
     end
     object dbClientesusuarioultimamodificacion: TStringField
+      DisplayWidth = 25
       FieldKind = fkData
       FieldName = 'usuarioultimamodificacion'
       Index = 54
