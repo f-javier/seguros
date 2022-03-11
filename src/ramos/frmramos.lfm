@@ -77,8 +77,8 @@ inherited formRamos: TformRamos
       Height = 344
       Top = 48
       Width = 568
-      ActivePage = tsControl
-      TabIndex = 2
+      ActivePage = tsFiltro
+      TabIndex = 3
       TabOrder = 2
       object tsDatos: TTabSheet
         Caption = 'Datos'
@@ -420,7 +420,7 @@ inherited formRamos: TformRamos
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 15
+      Size = 25
     end
     object dbRamosfechaultimamodificacion: TDateTimeField
       FieldKind = fkData
@@ -440,7 +440,7 @@ inherited formRamos: TformRamos
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 15
+      Size = 25
     end
   end
   object dsRamos: TDataSource[3]

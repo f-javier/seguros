@@ -154,6 +154,8 @@ object formPrincipal: TformPrincipal
       'codepage=utf8'
       'AutoEncodeStrings=ON'
     )
+    TransactIsolationLevel = tiReadCommitted
+    Connected = True
     AfterConnect = ZConnection1AfterConnect
     AfterDisconnect = ZConnection1AfterDisconnect
     HostName = 'localhost'

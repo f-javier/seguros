@@ -9,7 +9,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, frmPrincipal, frmPadre, frmCompanias, frmRamos, zcomponent,
   frmClientes, frmProfesiones, frmFormasdePago, frmconexionmysql,
-  frmcolaboradores, frmpolizas
+  frmColaboradores, frmpolizas
   { you can add units after this };
 
 {$R *.res}

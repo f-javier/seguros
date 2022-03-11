@@ -111,6 +111,7 @@
         <ComponentName Value="formColaboradores"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frmColaboradores"/>
       </Unit9>
       <Unit10>
         <Filename Value="polizas\frmpolizas.pas"/>
