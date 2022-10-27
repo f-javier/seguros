@@ -82,9 +82,6 @@ implementation
 procedure TformRamos.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
-  dbRamos.Open;
-  dbCompanias.Open;
-  dbRamosDEC.Open;
 end;
 
 procedure TformRamos.FormDestroy(Sender: TObject);

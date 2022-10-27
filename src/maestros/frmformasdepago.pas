@@ -64,7 +64,6 @@ implementation
 procedure TformFormasdePago.FormCreate(Sender: TObject);
 begin
   pc.ActivePage:=tsDatos;
-  dbFormasPago.Open;
 end;
 
 procedure TformFormasdePago.FormDestroy(Sender: TObject);

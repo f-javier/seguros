@@ -215,8 +215,6 @@ implementation
 procedure TformClientes.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
-  dbClientes.Open;
-  dbProvincias.Open;
 end;
 
 procedure TformClientes.FormDestroy(Sender: TObject);

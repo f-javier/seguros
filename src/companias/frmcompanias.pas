@@ -176,7 +176,6 @@ implementation
 procedure TformCompanias.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
-  dbCompanias.Open;
 end;
 
 procedure TformCompanias.FormDestroy(Sender: TObject);

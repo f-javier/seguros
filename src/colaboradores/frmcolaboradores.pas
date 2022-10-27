@@ -101,8 +101,6 @@ implementation
 procedure TformColaboradores.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
-  dbColaboradores.Open;
-  dbProvincias.Open;
 end;
 
 procedure TformColaboradores.btnAplicarFiltroClick(Sender: TObject);

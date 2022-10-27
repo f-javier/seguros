@@ -64,7 +64,6 @@ implementation
 procedure TformProfesiones.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
-  dbProfesiones.Open;
 end;
 
 procedure TformProfesiones.FormDestroy(Sender: TObject);
