@@ -7,8 +7,10 @@ object formPadre: TformPadre
   ClientHeight = 472
   ClientWidth = 636
   FormStyle = fsStayOnTop
+  OnClose = FormClose
+  OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.2.2.0'
   object PanelBotonera: TPanel
     Left = 0
     Height = 40

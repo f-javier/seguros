@@ -5,7 +5,7 @@ inherited formClientes: TformClientes
   ClientHeight = 553
   ClientWidth = 757
   OnCreate = FormCreate
-  OnDestroy = FormDestroy
+  OnShow = nil
   inherited PanelBotonera: TPanel
     Width = 757
     ClientWidth = 757
@@ -45,42 +45,40 @@ inherited formClientes: TformClientes
     TabOrder = 1
     object Label1: TLabel
       Left = 21
-      Height = 13
+      Height = 15
       Top = 24
-      Width = 18
+      Width = 16
       Caption = 'Id.:'
       ParentColor = False
     end
     object DBEdit1: TDBEdit
       Left = 52
-      Height = 21
+      Height = 23
       Top = 19
       Width = 48
       DataField = 'id'
       DataSource = dsClientes
       ReadOnly = True
-      CharCase = ecNormal
       Color = clSilver
       MaxLength = 0
       TabOrder = 0
     end
     object Label2: TLabel
       Left = 152
-      Height = 13
+      Height = 15
       Top = 24
-      Width = 41
+      Width = 47
       Caption = 'Nombre:'
       ParentColor = False
     end
     object DBEdit2: TDBEdit
       Left = 208
-      Height = 21
+      Height = 23
       Top = 19
       Width = 344
       DataField = 'nombrecompleto'
       DataSource = dsClientes
       ReadOnly = True
-      CharCase = ecNormal
       Color = clSilver
       MaxLength = 0
       TabOrder = 1
@@ -90,65 +88,62 @@ inherited formClientes: TformClientes
       Height = 448
       Top = 56
       Width = 736
-      ActivePage = tsPersonales
-      TabIndex = 2
+      ActivePage = tsFechas
+      TabIndex = 1
       TabOrder = 2
       object tsDatos: TTabSheet
         Caption = 'Datos'
-        ClientHeight = 422
+        ClientHeight = 420
         ClientWidth = 728
         object dbeIdentificador: TDBEdit
           Left = 208
-          Height = 21
+          Height = 23
           Top = 12
           Width = 88
           DataField = 'identificador'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 1
         end
         object Label4: TLabel
           Left = 344
-          Height = 13
+          Height = 15
           Top = 16
-          Width = 62
+          Width = 66
           Caption = 'Válido hasta:'
           ParentColor = False
         end
         object dbeNombre: TDBEdit
           Left = 104
-          Height = 21
+          Height = 23
           Top = 40
           Width = 136
           DataField = 'nombre'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 3
         end
         object dbePoblacion: TDBEdit
           Left = 152
-          Height = 21
+          Height = 23
           Top = 88
           Width = 360
           DataField = 'poblacion'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 8
         end
         object Label5: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 116
-          Width = 47
+          Width = 52
           Caption = 'Provincia:'
           ParentColor = False
         end
         object dblcProvincia: TDBLookupComboBox
           Left = 104
-          Height = 21
+          Height = 23
           Top = 112
           Width = 188
           DataField = 'provincia'
@@ -162,37 +157,35 @@ inherited formClientes: TformClientes
         end
         object Label6: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 141
-          Width = 51
+          Width = 53
           Caption = 'Teléfonos:'
           ParentColor = False
         end
         object dbeTelefono1: TDBEdit
           Left = 104
-          Height = 21
+          Height = 23
           Top = 136
           Width = 110
           DataField = 'telefono1'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 10
         end
         object dbeTelefono2: TDBEdit
           Left = 230
-          Height = 21
+          Height = 23
           Top = 136
           Width = 110
           DataField = 'telefono2'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 11
         end
         object Label7: TLabel
           Left = 366
-          Height = 13
+          Height = 15
           Top = 141
           Width = 18
           Caption = 'Fax'
@@ -200,20 +193,19 @@ inherited formClientes: TformClientes
         end
         object dbeFax: TDBEdit
           Left = 398
-          Height = 21
+          Height = 23
           Top = 136
           Width = 110
           DataField = 'fax'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 12
         end
         object Label10: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 168
-          Width = 124
+          Width = 139
           Caption = 'Más opciones de contacto'
           ParentColor = False
         end
@@ -228,20 +220,20 @@ inherited formClientes: TformClientes
         end
         object Label13: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 16
-          Width = 65
+          Width = 70
           Caption = 'Identificador:'
           ParentColor = False
         end
         object dbcbIdentificador: TDBComboBox
           Left = 104
-          Height = 21
+          Height = 23
           Top = 12
           Width = 96
           DataField = 'tipodocumento'
           DataSource = dsClientes
-          ItemHeight = 13
+          ItemHeight = 15
           Items.Strings = (
             'NIF'
             'CIF'
@@ -254,429 +246,407 @@ inherited formClientes: TformClientes
         end
         object dbeFechaValidez: TDBEdit
           Left = 424
-          Height = 21
+          Height = 23
           Top = 12
           Width = 88
           DataField = 'fechadevalidez'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 2
         end
         object Label14: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 44
-          Width = 41
+          Width = 47
           Caption = 'Nombre:'
           ParentColor = False
         end
         object Label15: TLabel
           Left = 285
-          Height = 13
+          Height = 15
           Top = 44
-          Width = 46
+          Width = 52
           Caption = 'Apellidos:'
           ParentColor = False
         end
         object dbeApellido1: TDBEdit
           Left = 344
-          Height = 21
+          Height = 23
           Top = 40
           Width = 138
           DataField = 'apellido1'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 4
         end
         object dbeApellido2: TDBEdit
           Left = 488
-          Height = 21
+          Height = 23
           Top = 40
           Width = 138
           DataField = 'apellido2'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 5
         end
         object Label16: TLabel
           Left = 34
-          Height = 13
+          Height = 15
           Top = 72
-          Width = 47
+          Width = 53
           Caption = 'Dirección:'
           ParentColor = False
         end
         object dbeCodigoPostal: TDBEdit
           Left = 104
-          Height = 21
+          Height = 23
           Top = 88
           Width = 43
           DataField = 'codigopostal'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 7
         end
         object dbeDireccion: TDBEdit
           Left = 104
-          Height = 21
+          Height = 23
           Top = 64
           Width = 360
           DataField = 'direccion'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 6
         end
         object Label17: TLabel
           Left = 34
-          Height = 13
+          Height = 15
           Top = 96
-          Width = 49
+          Width = 56
           Caption = 'Población:'
           ParentColor = False
         end
       end
       object tsFechas: TTabSheet
         Caption = 'Fechas'
-        ClientHeight = 422
+        ClientHeight = 420
         ClientWidth = 728
         object Label18: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 76
-          Width = 77
+          Width = 81
           Caption = 'Fecha carnet A:'
           ParentColor = False
         end
         object dbeCarnetA: TDBEdit
           Left = 120
-          Height = 21
+          Height = 23
           Top = 72
           Width = 88
           DataField = 'fechacarneta'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 1
         end
         object Label19: TLabel
           Left = 264
-          Height = 13
+          Height = 15
           Top = 76
-          Width = 62
+          Width = 66
           Caption = 'Válido hasta:'
           ParentColor = False
         end
         object dbeValCarnetA: TDBEdit
           Left = 336
-          Height = 21
+          Height = 23
           Top = 72
           Width = 88
           DataField = 'validezcarneta'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 2
         end
         object Label20: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 104
-          Width = 83
+          Width = 87
           Caption = 'Fecha carnet A1:'
           ParentColor = False
         end
         object dbeCarnetA1: TDBEdit
           Left = 120
-          Height = 21
+          Height = 23
           Top = 100
           Width = 88
           DataField = 'fechacarneta1'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 3
         end
         object Label21: TLabel
           Left = 264
-          Height = 13
+          Height = 15
           Top = 104
-          Width = 62
+          Width = 66
           Caption = 'Válido hasta:'
           ParentColor = False
         end
         object dbeValCarnetA1: TDBEdit
           Left = 336
-          Height = 21
+          Height = 23
           Top = 100
           Width = 88
           DataField = 'validezcarneta1'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 4
         end
         object Label22: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 132
-          Width = 83
+          Width = 87
           Caption = 'Fecha carnet A2:'
           ParentColor = False
         end
         object dbeCarnetA2: TDBEdit
           Left = 120
-          Height = 21
+          Height = 23
           Top = 128
           Width = 88
           DataField = 'fechacarneta2'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 5
         end
         object Label23: TLabel
           Left = 264
-          Height = 13
+          Height = 15
           Top = 132
-          Width = 62
+          Width = 66
           Caption = 'Válido hasta:'
           ParentColor = False
         end
         object dbeValCarnetA2: TDBEdit
           Left = 336
-          Height = 21
+          Height = 23
           Top = 128
           Width = 88
           DataField = 'validezcarneta2'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 6
         end
         object Label24: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 160
-          Width = 76
+          Width = 80
           Caption = 'Fecha carnet B:'
           ParentColor = False
         end
         object Label25: TLabel
           Left = 264
-          Height = 13
+          Height = 15
           Top = 160
-          Width = 62
+          Width = 66
           Caption = 'Válido hasta:'
           ParentColor = False
         end
         object dbeValCarnetB: TDBEdit
           Left = 336
-          Height = 21
+          Height = 23
           Top = 156
           Width = 88
           DataField = 'validezcarnetb'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 8
         end
         object Label26: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 188
-          Width = 77
+          Width = 81
           Caption = 'Fecha carnet C:'
           ParentColor = False
         end
         object dbeCarnetC: TDBEdit
           Left = 120
-          Height = 21
+          Height = 23
           Top = 184
           Width = 88
           DataField = 'fechacarnetc'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 9
         end
         object Label27: TLabel
           Left = 264
-          Height = 13
+          Height = 15
           Top = 188
-          Width = 62
+          Width = 66
           Caption = 'Válido hasta:'
           ParentColor = False
         end
         object dbeValCarnetC: TDBEdit
           Left = 336
-          Height = 21
+          Height = 23
           Top = 184
           Width = 88
           DataField = 'validezcarnetc'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 10
         end
         object Label28: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 216
-          Width = 77
+          Width = 81
           Caption = 'Fecha carnet D:'
           ParentColor = False
         end
         object dbeCarnetD: TDBEdit
           Left = 120
-          Height = 21
+          Height = 23
           Top = 212
           Width = 88
           DataField = 'fechacarnetd'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 11
         end
         object Label29: TLabel
           Left = 264
-          Height = 13
+          Height = 15
           Top = 216
-          Width = 62
+          Width = 66
           Caption = 'Válido hasta:'
           ParentColor = False
         end
         object dbeValCarnetD: TDBEdit
           Left = 336
-          Height = 21
+          Height = 23
           Top = 212
           Width = 88
           DataField = 'validezcarnetd'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 12
         end
         object Label8: TLabel
           Left = 32
-          Height = 13
+          Height = 15
           Top = 36
-          Width = 87
+          Width = 97
           Caption = 'Fecha nacimiento:'
           ParentColor = False
         end
         object dbeFNacimiento: TDBEdit
           Left = 120
-          Height = 21
+          Height = 23
           Top = 32
           Width = 88
           DataField = 'fechanacimiento'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 0
         end
         object dbeCarnetB: TDBEdit
           Left = 120
-          Height = 21
+          Height = 23
           Top = 156
           Width = 88
           DataField = 'fechacarnetb'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 7
         end
       end
       object tsPersonales: TTabSheet
         Caption = 'Personales'
-        ClientHeight = 422
+        ClientHeight = 420
         ClientWidth = 728
         object Label32: TLabel
           Left = 34
-          Height = 13
+          Height = 15
           Top = 36
-          Width = 26
+          Width = 28
           Caption = 'Alias:'
           ParentColor = False
         end
         object dbeEmail1: TDBEdit
           Left = 128
-          Height = 21
+          Height = 23
           Top = 32
           Width = 360
           DataField = 'alias'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 0
         end
         object Label33: TLabel
           Left = 34
-          Height = 13
+          Height = 15
           Top = 76
-          Width = 83
+          Width = 89
           Caption = 'Cuenta bancaria:'
           ParentColor = False
         end
         object dbeEmail2: TDBEdit
           Left = 128
-          Height = 21
+          Height = 23
           Top = 72
           Width = 360
           DataField = 'cuentabancaria'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 1
         end
         object Label34: TLabel
           Left = 34
-          Height = 13
+          Height = 15
           Top = 116
-          Width = 32
+          Width = 37
           Caption = 'E-Mail:'
           ParentColor = False
         end
         object Label44: TLabel
           Left = 34
-          Height = 13
+          Height = 15
           Top = 146
-          Width = 59
+          Width = 64
           Caption = 'Página web:'
           ParentColor = False
         end
         object Label46: TLabel
           Left = 34
-          Height = 13
+          Height = 15
           Top = 240
-          Width = 49
+          Width = 53
           Caption = 'Profesión:'
           ParentColor = False
         end
         object dbeEmail3: TDBEdit
           Left = 128
-          Height = 21
+          Height = 23
           Top = 112
           Width = 360
           DataField = 'email'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 2
         end
         object dbeEmail4: TDBEdit
           Left = 128
-          Height = 21
+          Height = 23
           Top = 140
           Width = 360
           DataField = 'email'
           DataSource = dsClientes
-          CharCase = ecNormal
           MaxLength = 0
           TabOrder = 3
         end
@@ -719,14 +689,14 @@ inherited formClientes: TformClientes
           Top = 24
           Width = 185
           Caption = ' LOPD '
-          ClientHeight = 110
+          ClientHeight = 108
           ClientWidth = 181
           TabOrder = 5
           object Label45: TLabel
             Left = 24
-            Height = 13
+            Height = 15
             Top = 16
-            Width = 84
+            Width = 94
             Caption = 'Enviar publicidad:'
             ParentColor = False
           end
@@ -743,17 +713,17 @@ inherited formClientes: TformClientes
           end
           object Label47: TLabel
             Left = 24
-            Height = 13
+            Height = 15
             Top = 44
-            Width = 72
+            Width = 79
             Caption = 'Impreso LOPD:'
             ParentColor = False
           end
           object Label48: TLabel
             Left = 24
-            Height = 13
+            Height = 15
             Top = 72
-            Width = 71
+            Width = 80
             Caption = 'Firmado LOPD:'
             ParentColor = False
           end
@@ -783,13 +753,13 @@ inherited formClientes: TformClientes
       end
       object tsTextos: TTabSheet
         Caption = 'Textos'
-        ClientHeight = 422
+        ClientHeight = 420
         ClientWidth = 728
         object Label30: TLabel
           Left = 8
-          Height = 13
+          Height = 15
           Top = 8
-          Width = 42
+          Width = 44
           Caption = 'Detalles:'
           ParentColor = False
         end
@@ -805,9 +775,9 @@ inherited formClientes: TformClientes
         end
         object Label31: TLabel
           Left = 8
-          Height = 13
+          Height = 15
           Top = 216
-          Width = 75
+          Width = 80
           Caption = 'Observaciones:'
           ParentColor = False
         end
@@ -824,7 +794,7 @@ inherited formClientes: TformClientes
       end
       object tsIncidencias: TTabSheet
         Caption = 'Incidencias'
-        ClientHeight = 422
+        ClientHeight = 420
         ClientWidth = 728
         object dbmTelefonosAsistencia3: TDBMemo
           Left = 8
@@ -839,7 +809,7 @@ inherited formClientes: TformClientes
       end
       object tsComercial: TTabSheet
         Caption = 'Comercial'
-        ClientHeight = 422
+        ClientHeight = 420
         ClientWidth = 728
         object dbmTelefonosAsistencia4: TDBMemo
           Left = 8
@@ -854,7 +824,7 @@ inherited formClientes: TformClientes
       end
       object tsControl: TTabSheet
         Caption = 'Control'
-        ClientHeight = 422
+        ClientHeight = 420
         ClientWidth = 728
         object gbCreacion: TGroupBox
           Left = 128
@@ -862,47 +832,45 @@ inherited formClientes: TformClientes
           Top = 32
           Width = 297
           Caption = ' Creación '
-          ClientHeight = 87
+          ClientHeight = 85
           ClientWidth = 293
           TabOrder = 0
           object Label40: TLabel
             Left = 32
-            Height = 13
+            Height = 15
             Top = 16
-            Width = 33
+            Width = 34
             Caption = 'Fecha:'
             ParentColor = False
           end
           object DBEdit5: TDBEdit
             Left = 88
-            Height = 21
+            Height = 23
             Top = 8
             Width = 185
             DataField = 'fechacreacion'
             DataSource = dsClientes
             ReadOnly = True
-            CharCase = ecNormal
             Color = clSilver
             MaxLength = 0
             TabOrder = 0
           end
           object Label41: TLabel
             Left = 32
-            Height = 13
+            Height = 15
             Top = 44
-            Width = 40
+            Width = 43
             Caption = 'Usuario:'
             ParentColor = False
           end
           object DBEdit6: TDBEdit
             Left = 88
-            Height = 21
+            Height = 23
             Top = 36
             Width = 184
             DataField = 'usuariocreacion'
             DataSource = dsClientes
             ReadOnly = True
-            CharCase = ecNormal
             Color = clSilver
             MaxLength = 0
             TabOrder = 1
@@ -914,47 +882,45 @@ inherited formClientes: TformClientes
           Top = 160
           Width = 297
           Caption = ' Ultima Modificación '
-          ClientHeight = 87
+          ClientHeight = 85
           ClientWidth = 293
           TabOrder = 1
           object Label42: TLabel
             Left = 32
-            Height = 13
+            Height = 15
             Top = 16
-            Width = 33
+            Width = 34
             Caption = 'Fecha:'
             ParentColor = False
           end
           object DBEdit7: TDBEdit
             Left = 88
-            Height = 21
+            Height = 23
             Top = 8
             Width = 185
             DataField = 'fechaultimamodificacion'
             DataSource = dsClientes
             ReadOnly = True
-            CharCase = ecNormal
             Color = clSilver
             MaxLength = 0
             TabOrder = 0
           end
           object Label43: TLabel
             Left = 32
-            Height = 13
+            Height = 15
             Top = 44
-            Width = 40
+            Width = 43
             Caption = 'Usuario:'
             ParentColor = False
           end
           object DBEdit8: TDBEdit
             Left = 88
-            Height = 21
+            Height = 23
             Top = 36
             Width = 184
             DataField = 'usuarioultimamodificacion'
             DataSource = dsClientes
             ReadOnly = True
-            CharCase = ecNormal
             Color = clSilver
             MaxLength = 0
             TabOrder = 1
@@ -991,19 +957,19 @@ inherited formClientes: TformClientes
       end
       object tsFiltro: TTabSheet
         Caption = 'Filtro'
-        ClientHeight = 422
+        ClientHeight = 420
         ClientWidth = 728
         object Label35: TLabel
           Left = 8
-          Height = 13
+          Height = 15
           Top = 12
-          Width = 41
+          Width = 47
           Caption = 'Nombre:'
           ParentColor = False
         end
         object BusqNombre: TEdit
           Left = 80
-          Height = 21
+          Height = 23
           Top = 8
           Width = 236
           CharCase = ecUppercase
@@ -1066,15 +1032,15 @@ inherited formClientes: TformClientes
         end
         object Label36: TLabel
           Left = 8
-          Height = 13
+          Height = 15
           Top = 36
-          Width = 65
+          Width = 70
           Caption = 'Identificador:'
           ParentColor = False
         end
         object BusqIdentificador: TEdit
           Left = 80
-          Height = 21
+          Height = 23
           Top = 32
           Width = 236
           CharCase = ecUppercase
@@ -1082,15 +1048,15 @@ inherited formClientes: TformClientes
         end
         object Label37: TLabel
           Left = 344
-          Height = 13
+          Height = 15
           Top = 36
-          Width = 47
+          Width = 53
           Caption = 'Dirección:'
           ParentColor = False
         end
         object BusqDireccion: TEdit
           Left = 416
-          Height = 21
+          Height = 23
           Top = 32
           Width = 236
           CharCase = ecUppercase
@@ -1098,15 +1064,15 @@ inherited formClientes: TformClientes
         end
         object Label38: TLabel
           Left = 8
-          Height = 13
+          Height = 15
           Top = 64
-          Width = 46
+          Width = 48
           Caption = 'Teléfono:'
           ParentColor = False
         end
         object BusqTelefono: TEdit
           Left = 80
-          Height = 21
+          Height = 23
           Top = 60
           Width = 236
           CharCase = ecUppercase
@@ -1114,15 +1080,15 @@ inherited formClientes: TformClientes
         end
         object Label39: TLabel
           Left = 344
-          Height = 13
+          Height = 15
           Top = 64
-          Width = 49
+          Width = 56
           Caption = 'Población:'
           ParentColor = False
         end
         object BusqPoblacion: TEdit
           Left = 416
-          Height = 21
+          Height = 23
           Top = 60
           Width = 236
           CharCase = ecUppercase
@@ -1132,29 +1098,28 @@ inherited formClientes: TformClientes
     end
     object Label11: TLabel
       Left = 576
-      Height = 13
+      Height = 15
       Top = 8
-      Width = 70
+      Width = 74
       Caption = 'Fecha de Alta:'
       ParentColor = False
     end
     object Label12: TLabel
       Left = 576
-      Height = 13
+      Height = 15
       Top = 32
-      Width = 72
+      Width = 75
       Caption = 'Fecha de Baja:'
       ParentColor = False
     end
     object DBEdit4: TDBEdit
       Left = 654
-      Height = 21
+      Height = 23
       Top = 26
       Width = 75
       DataField = 'fechabaja'
       DataSource = dsClientes
       ReadOnly = True
-      CharCase = ecNormal
       Color = clSilver
       MaxLength = 0
       TabOrder = 3
@@ -1162,13 +1127,12 @@ inherited formClientes: TformClientes
   end
   object DBEdit3: TDBEdit[2]
     Left = 654
-    Height = 21
+    Height = 23
     Top = 43
     Width = 75
     DataField = 'fechaalta'
     DataSource = dsClientes
     ReadOnly = True
-    CharCase = ecNormal
     Color = clSilver
     MaxLength = 0
     TabOrder = 2

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  DbCtrls, Buttons, db;
+  DbCtrls, Buttons, db, LCLType;
 
 type
 
@@ -57,7 +57,11 @@ var
 begin
   for i:=0 to Self.ComponentCount-1 do begin
       if Self.Components[i] is TDataSource then
-         TDataSource(Self.Components[i]).DataSet.Close;
+         if (TDataSource(Self.Components[i]).DataSet.State in dsEditModes) then begin
+            Application.MessageBox('Por favor, confirme los cambios','¡¡ AVISO !!',MB_ICONERROR);
+            abort;
+         end else
+            TDataSource(Self.Components[i]).DataSet.Close;
   end;
 end;
 

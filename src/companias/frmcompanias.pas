@@ -157,7 +157,6 @@ type
     dbCompanias: TZQuery;
     procedure btnAplicarFiltroClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
     { private declarations }
   public
@@ -176,11 +175,6 @@ implementation
 procedure TformCompanias.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
-end;
-
-procedure TformCompanias.FormDestroy(Sender: TObject);
-begin
-  dbCompanias.Close;
 end;
 
 procedure TformCompanias.btnAplicarFiltroClick(Sender: TObject);

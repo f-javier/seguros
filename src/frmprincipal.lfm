@@ -9,7 +9,7 @@ object formPrincipal: TformPrincipal
   Menu = menuPrincipal
   OnCreate = FormCreate
   Position = poDesktopCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.2.2.0'
   WindowState = wsMaximized
   object Panel1: TPanel
     Left = 0
@@ -32,9 +32,9 @@ object formPrincipal: TformPrincipal
       TabOrder = 0
       object Label1: TLabel
         Left = 22
-        Height = 13
+        Height = 15
         Top = 12
-        Width = 99
+        Width = 109
         Caption = 'Conexión al Servidor'
         ParentColor = False
       end
@@ -153,12 +153,12 @@ object formPrincipal: TformPrincipal
     Properties.Strings = (
       'codepage=utf8'
       'AutoEncodeStrings=ON'
+      'controls_cp=CP_UTF8'
     )
     TransactIsolationLevel = tiReadCommitted
-    Connected = True
     AfterConnect = ZConnection1AfterConnect
     AfterDisconnect = ZConnection1AfterDisconnect
-    HostName = 'localhost'
+    HostName = '127.0.0.1'
     Port = 0
     Database = 'seguros'
     User = 'seguros'

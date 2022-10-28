@@ -45,7 +45,6 @@ type
     dbProfesionesusuarioultimamodificacion: TStringField;
     procedure btnAplicarFiltroClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
 
   public
@@ -64,11 +63,6 @@ implementation
 procedure TformProfesiones.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
-end;
-
-procedure TformProfesiones.FormDestroy(Sender: TObject);
-begin
-  dbProfesiones.Close;
 end;
 
 procedure TformProfesiones.btnAplicarFiltroClick(Sender: TObject);

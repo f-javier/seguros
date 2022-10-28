@@ -45,7 +45,6 @@ type
     tsFiltro: TTabSheet;
     procedure btnAplicarFiltroClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
 
   public
@@ -64,11 +63,6 @@ implementation
 procedure TformFormasdePago.FormCreate(Sender: TObject);
 begin
   pc.ActivePage:=tsDatos;
-end;
-
-procedure TformFormasdePago.FormDestroy(Sender: TObject);
-begin
-  dbFormasPago.Close;
 end;
 
 procedure TformFormasdePago.btnAplicarFiltroClick(Sender: TObject);

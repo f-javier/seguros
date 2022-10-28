@@ -63,7 +63,6 @@ type
     tsFiltro: TTabSheet;
     procedure btnAplicarFiltroClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
     { private declarations }
   public
@@ -82,13 +81,6 @@ implementation
 procedure TformRamos.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
-end;
-
-procedure TformRamos.FormDestroy(Sender: TObject);
-begin
-  dbRamos.Close;
-  dbCompanias.Close;
-  dbRamosDEC.Close;
 end;
 
 procedure TformRamos.btnAplicarFiltroClick(Sender: TObject);

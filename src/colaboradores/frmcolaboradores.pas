@@ -82,7 +82,6 @@ type
     tsDatos: TTabSheet;
     procedure btnAplicarFiltroClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
 
   public
@@ -136,12 +135,6 @@ begin
       BusqPoblacion.Color:=clDefault;
       btnAplicarFiltro.Caption:='Aplicar Filtro';
   end;
-end;
-
-procedure TformColaboradores.FormDestroy(Sender: TObject);
-begin
-  dbColaboradores.Close;
-  dbProvincias.Close;
 end;
 
 end.

@@ -196,7 +196,6 @@ type
     procedure dbClientesCalcFields(DataSet: TDataSet);
     procedure dbClientesNewRecord(DataSet: TDataSet);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
 
   public
@@ -215,12 +214,6 @@ implementation
 procedure TformClientes.FormCreate(Sender: TObject);
 begin
   pc.ActivePage := tsDatos;
-end;
-
-procedure TformClientes.FormDestroy(Sender: TObject);
-begin
-  dbClientes.Close;
-  dbProvincias.Close;
 end;
 
 procedure TformClientes.dbClientesCalcFields(DataSet: TDataSet);
