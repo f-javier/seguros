@@ -1,11 +1,756 @@
 inherited formPolizas: TformPolizas
+  Height = 537
+  Width = 759
   Caption = 'Pólizas'
+  ClientHeight = 537
+  ClientWidth = 759
+  OnClose = nil
+  OnCreate = FormCreate
+  OnShow = nil
   inherited PanelBotonera: TPanel
+    Width = 759
+    ClientWidth = 759
     inherited DBNavigator1: TDBNavigator
+      DataSource = dsPolizas
       Hints.Strings = (      )
     end
     inherited sbBuscar: TSpeedButton
       Visible = False
     end
+  end
+  object pc: TPageControl[1]
+    Left = 8
+    Height = 448
+    Top = 72
+    Width = 744
+    ActivePage = tsControl
+    TabIndex = 5
+    TabOrder = 1
+    object tsDatos: TTabSheet
+      Caption = 'Datos'
+      ClientHeight = 420
+      ClientWidth = 736
+      object Label2: TLabel
+        Left = 32
+        Height = 15
+        Top = 24
+        Width = 36
+        Caption = 'Efecto:'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 32
+        Height = 15
+        Top = 52
+        Width = 50
+        Caption = 'Tomador:'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 32
+        Height = 15
+        Top = 80
+        Width = 58
+        Caption = 'Compañía:'
+        ParentColor = False
+      end
+      object Label6: TLabel
+        Left = 32
+        Height = 15
+        Top = 108
+        Width = 34
+        Caption = 'Ramo:'
+        ParentColor = False
+      end
+      object Label7: TLabel
+        Left = 32
+        Height = 15
+        Top = 136
+        Width = 69
+        Caption = 'Colaborador:'
+        ParentColor = False
+      end
+      object Label8: TLabel
+        Left = 32
+        Height = 15
+        Top = 164
+        Width = 83
+        Caption = 'Forma de Pago:'
+        ParentColor = False
+      end
+      object Label9: TLabel
+        Left = 32
+        Height = 15
+        Top = 192
+        Width = 106
+        Caption = 'Domicilio de Cobro:'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 208
+        Height = 15
+        Top = 24
+        Width = 69
+        Caption = 'Vencimiento:'
+        ParentColor = False
+      end
+      object Label24: TLabel
+        Left = 32
+        Height = 15
+        Top = 248
+        Width = 47
+        Caption = 'En Vigor:'
+        ParentColor = False
+      end
+      object Label25: TLabel
+        Left = 32
+        Height = 15
+        Top = 276
+        Width = 107
+        Caption = 'Fecha de Anulación:'
+        ParentColor = False
+      end
+      object Label26: TLabel
+        Left = 32
+        Height = 15
+        Top = 304
+        Width = 114
+        Caption = 'Motivo de Anulación:'
+        ParentColor = False
+      end
+    end
+    object tsObservaciones: TTabSheet
+      Caption = 'Observaciones'
+      ClientHeight = 420
+      ClientWidth = 736
+      object Label10: TLabel
+        Left = 32
+        Height = 15
+        Top = 24
+        Width = 80
+        Caption = 'Observaciones:'
+        ParentColor = False
+      end
+    end
+    object tsVehiculo: TTabSheet
+      Caption = 'Vehiculo'
+      ClientHeight = 420
+      ClientWidth = 736
+      object Label11: TLabel
+        Left = 32
+        Height = 15
+        Top = 24
+        Width = 53
+        Caption = 'Matrícula:'
+        ParentColor = False
+      end
+      object Label12: TLabel
+        Left = 32
+        Height = 15
+        Top = 52
+        Width = 23
+        Caption = 'Uso:'
+        ParentColor = False
+      end
+      object Label13: TLabel
+        Left = 32
+        Height = 15
+        Top = 80
+        Width = 88
+        Caption = 'Marca / Modelo:'
+        ParentColor = False
+      end
+      object Label14: TLabel
+        Left = 32
+        Height = 15
+        Top = 108
+        Width = 61
+        Caption = 'Propietario:'
+        ParentColor = False
+      end
+      object Label15: TLabel
+        Left = 32
+        Height = 15
+        Top = 136
+        Width = 60
+        Caption = 'Conductor:'
+        ParentColor = False
+      end
+      object Label16: TLabel
+        Left = 32
+        Height = 15
+        Top = 164
+        Width = 83
+        Caption = 'DNI Conductor:'
+        ParentColor = False
+      end
+      object Label17: TLabel
+        Left = 32
+        Height = 15
+        Top = 192
+        Width = 114
+        Caption = 'Fec. Nac.  Conductor:'
+        ParentColor = False
+      end
+      object Label18: TLabel
+        Left = 32
+        Height = 15
+        Top = 220
+        Width = 118
+        Caption = 'Fec. Carn.  Conductor:'
+        ParentColor = False
+      end
+      object Label19: TLabel
+        Left = 32
+        Height = 15
+        Top = 248
+        Width = 61
+        Caption = 'Coberturas:'
+        ParentColor = False
+      end
+    end
+    object tsDiversos: TTabSheet
+      Caption = 'Diversos'
+      ClientHeight = 420
+      ClientWidth = 736
+      object Label20: TLabel
+        Left = 32
+        Height = 15
+        Top = 24
+        Width = 109
+        Caption = 'Situación del Riesgo:'
+        ParentColor = False
+      end
+      object Label21: TLabel
+        Left = 32
+        Height = 15
+        Top = 52
+        Width = 51
+        Caption = 'Capitales:'
+        ParentColor = False
+      end
+    end
+    object tsVidaRiesgo: TTabSheet
+      Caption = 'Vida/Riesgo'
+      ClientHeight = 420
+      ClientWidth = 736
+      object Label22: TLabel
+        Left = 32
+        Height = 15
+        Top = 52
+        Width = 51
+        Caption = 'Capitales:'
+        ParentColor = False
+      end
+      object Label23: TLabel
+        Left = 32
+        Height = 15
+        Top = 24
+        Width = 98
+        Caption = 'Riesgo Asegurado:'
+        ParentColor = False
+      end
+    end
+    object tsControl: TTabSheet
+      Caption = 'Control'
+      ClientHeight = 420
+      ClientWidth = 736
+      object gbCreacion: TGroupBox
+        Left = 128
+        Height = 105
+        Top = 32
+        Width = 297
+        Caption = ' Creación '
+        ClientHeight = 85
+        ClientWidth = 293
+        TabOrder = 0
+        object Label40: TLabel
+          Left = 32
+          Height = 15
+          Top = 16
+          Width = 34
+          Caption = 'Fecha:'
+          ParentColor = False
+        end
+        object DBEdit5: TDBEdit
+          Left = 88
+          Height = 23
+          Top = 8
+          Width = 185
+          DataField = 'fechacreacion'
+          DataSource = dsPolizas
+          ReadOnly = True
+          Color = clSilver
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label41: TLabel
+          Left = 32
+          Height = 15
+          Top = 44
+          Width = 43
+          Caption = 'Usuario:'
+          ParentColor = False
+        end
+        object DBEdit6: TDBEdit
+          Left = 88
+          Height = 23
+          Top = 36
+          Width = 184
+          DataField = 'usuariocreacion'
+          DataSource = dsPolizas
+          ReadOnly = True
+          Color = clSilver
+          MaxLength = 0
+          TabOrder = 1
+        end
+      end
+      object gbUltimaModificacion: TGroupBox
+        Left = 128
+        Height = 105
+        Top = 160
+        Width = 297
+        Caption = ' Ultima Modificación '
+        ClientHeight = 85
+        ClientWidth = 293
+        TabOrder = 1
+        object Label42: TLabel
+          Left = 32
+          Height = 15
+          Top = 16
+          Width = 34
+          Caption = 'Fecha:'
+          ParentColor = False
+        end
+        object DBEdit7: TDBEdit
+          Left = 88
+          Height = 23
+          Top = 8
+          Width = 185
+          DataField = 'fechaultimamodificacion'
+          DataSource = dsPolizas
+          ReadOnly = True
+          Color = clSilver
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label43: TLabel
+          Left = 32
+          Height = 15
+          Top = 44
+          Width = 43
+          Caption = 'Usuario:'
+          ParentColor = False
+        end
+        object DBEdit8: TDBEdit
+          Left = 88
+          Height = 23
+          Top = 36
+          Width = 184
+          DataField = 'usuarioultimamodificacion'
+          DataSource = dsPolizas
+          ReadOnly = True
+          Color = clSilver
+          MaxLength = 0
+          TabOrder = 1
+        end
+      end
+    end
+    object tsFiltro: TTabSheet
+      Caption = 'Filtro'
+    end
+  end
+  object Label1: TLabel[2]
+    Left = 24
+    Height = 15
+    Top = 51
+    Width = 34
+    Caption = 'Póliza:'
+    ParentColor = False
+  end
+  object dbPolizas: TZQuery[3]
+    Connection = formPrincipal.ZConnection1
+    SQL.Strings = (
+      'SELECT * FROM polizas ORDER BY efecto'
+    )
+    Params = <>
+    Left = 538
+    Top = 68
+    object dbPolizasid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object dbPolizaspoliza: TStringField
+      FieldKind = fkData
+      FieldName = 'poliza'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbPolizasefecto: TDateField
+      FieldKind = fkData
+      FieldName = 'efecto'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbPolizasvencimiento: TDateField
+      FieldKind = fkData
+      FieldName = 'vencimiento'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbPolizastomadorid: TLongintField
+      FieldKind = fkData
+      FieldName = 'tomadorid'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object dbPolizascompaniaid: TLongintField
+      FieldKind = fkData
+      FieldName = 'companiaid'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object dbPolizasramoid: TLongintField
+      FieldKind = fkData
+      FieldName = 'ramoid'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object dbPolizascolaboradorid: TLongintField
+      FieldKind = fkData
+      FieldName = 'colaboradorid'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object dbPolizasformadepagoid: TLongintField
+      FieldKind = fkData
+      FieldName = 'formadepagoid'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbPolizasdomiciliocobro: TStringField
+      FieldKind = fkData
+      FieldName = 'domiciliocobro'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object dbPolizasobservaciones: TMemoField
+      FieldKind = fkData
+      FieldName = 'observaciones'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object dbPolizasautomatricula: TStringField
+      FieldKind = fkData
+      FieldName = 'automatricula'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object dbPolizasautouso: TStringField
+      FieldKind = fkData
+      FieldName = 'autouso'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbPolizasautomarcamodelo: TStringField
+      FieldKind = fkData
+      FieldName = 'automarcamodelo'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object dbPolizasautopropietario: TStringField
+      FieldKind = fkData
+      FieldName = 'autopropietario'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object dbPolizasautoconductor: TStringField
+      FieldKind = fkData
+      FieldName = 'autoconductor'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object dbPolizasautonifconductor: TStringField
+      FieldKind = fkData
+      FieldName = 'autonifconductor'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbPolizasautonacimconductor: TStringField
+      FieldKind = fkData
+      FieldName = 'autonacimconductor'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbPolizasautocarnetconductor: TStringField
+      FieldKind = fkData
+      FieldName = 'autocarnetconductor'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbPolizasautocoberturas: TStringField
+      FieldKind = fkData
+      FieldName = 'autocoberturas'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object dbPolizasdiversosriesgo: TStringField
+      FieldKind = fkData
+      FieldName = 'diversosriesgo'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object dbPolizasdiversoscapitales: TMemoField
+      FieldKind = fkData
+      FieldName = 'diversoscapitales'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object dbPolizasvidaasegurado: TStringField
+      FieldKind = fkData
+      FieldName = 'vidaasegurado'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object dbPolizasvidacapitales: TMemoField
+      FieldKind = fkData
+      FieldName = 'vidacapitales'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object dbPolizasenvigor: TStringField
+      FieldKind = fkData
+      FieldName = 'envigor'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbPolizasfechaanulacion: TDateField
+      FieldKind = fkData
+      FieldName = 'fechaanulacion'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbPolizasmotivoanulacion: TStringField
+      FieldKind = fkData
+      FieldName = 'motivoanulacion'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object dbPolizasfechacreacion: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'fechacreacion'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbPolizasusuariocreacion: TStringField
+      FieldKind = fkData
+      FieldName = 'usuariocreacion'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 25
+    end
+    object dbPolizasfechaultimamodificacion: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'fechaultimamodificacion'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbPolizasusuarioultimamodificacion: TStringField
+      FieldKind = fkData
+      FieldName = 'usuarioultimamodificacion'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 25
+    end
+  end
+  object dbClientes: TZQuery[4]
+    Connection = formPrincipal.ZConnection1
+    SQL.Strings = (
+      'SELECT * FROM clientes ORDER BY id'
+    )
+    Params = <>
+    Left = 538
+    Top = 128
+  end
+  object dbCompanias: TZQuery[5]
+    Connection = formPrincipal.ZConnection1
+    SQL.Strings = (
+      'SELECT * FROM companias ORDER BY id'
+    )
+    Params = <>
+    Left = 538
+    Top = 192
+  end
+  object dbRamos: TZQuery[6]
+    Connection = formPrincipal.ZConnection1
+    SQL.Strings = (
+      'SELECT * FROM ramos ORDER BY id'
+    )
+    Params = <>
+    Left = 538
+    Top = 256
+  end
+  object dbColaboradores: TZQuery[7]
+    Connection = formPrincipal.ZConnection1
+    SQL.Strings = (
+      'SELECT * FROM colaboradores ORDER BY id'
+    )
+    Params = <>
+    Left = 538
+    Top = 316
+  end
+  object dbFormasdePago: TZQuery[8]
+    Connection = formPrincipal.ZConnection1
+    SQL.Strings = (
+      'SELECT * FROM formasdepago ORDER BY id'
+    )
+    Params = <>
+    Left = 538
+    Top = 371
+  end
+  object dsPolizas: TDataSource[9]
+    DataSet = dbPolizas
+    Left = 632
+    Top = 68
+  end
+  object dsClientes: TDataSource[10]
+    DataSet = dbClientes
+    Left = 632
+    Top = 128
+  end
+  object dsCompanias: TDataSource[11]
+    DataSet = dbCompanias
+    Left = 632
+    Top = 192
+  end
+  object dsRamos: TDataSource[12]
+    DataSet = dbRamos
+    Left = 632
+    Top = 256
+  end
+  object dsColaboradores: TDataSource[13]
+    DataSet = dbColaboradores
+    Left = 632
+    Top = 316
+  end
+  object dsFormasdePago: TDataSource[14]
+    DataSet = dbFormasdePago
+    Left = 632
+    Top = 371
   end
 end
