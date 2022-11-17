@@ -4,9 +4,7 @@ inherited formPolizas: TformPolizas
   Caption = 'Pólizas'
   ClientHeight = 537
   ClientWidth = 759
-  OnClose = nil
   OnCreate = FormCreate
-  OnShow = nil
   inherited PanelBotonera: TPanel
     Width = 759
     ClientWidth = 759
@@ -17,14 +15,17 @@ inherited formPolizas: TformPolizas
     inherited sbBuscar: TSpeedButton
       Visible = False
     end
+    inherited sbSalir: TSpeedButton
+      Left = 716
+    end
   end
   object pc: TPageControl[1]
     Left = 8
     Height = 448
     Top = 72
     Width = 744
-    ActivePage = tsControl
-    TabIndex = 5
+    ActivePage = tsVehiculo
+    TabIndex = 2
     TabOrder = 1
     object tsDatos: TTabSheet
       Caption = 'Datos'
@@ -87,7 +88,7 @@ inherited formPolizas: TformPolizas
         ParentColor = False
       end
       object Label3: TLabel
-        Left = 208
+        Left = 288
         Height = 15
         Top = 24
         Width = 69
@@ -118,6 +119,242 @@ inherited formPolizas: TformPolizas
         Caption = 'Motivo de Anulación:'
         ParentColor = False
       end
+      object dbdeEfecto: TDBDateEdit
+        Left = 152
+        Height = 23
+        Top = 21
+        Width = 112
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        DateOrder = doNone
+        ButtonWidth = 27
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 0
+        DataField = 'efecto'
+        DataSource = dsPolizas
+      end
+      object dbdeVencimiento: TDBDateEdit
+        Left = 368
+        Height = 23
+        Top = 21
+        Width = 103
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        DateOrder = doNone
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 1
+        DataField = 'vencimiento'
+        DataSource = dsPolizas
+      end
+      object dbeTomadorId: TDBEdit
+        Left = 152
+        Height = 23
+        Top = 49
+        Width = 48
+        DataField = 'tomadorid'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object dblcTomador: TDBLookupComboBox
+        Left = 208
+        Height = 23
+        Top = 48
+        Width = 284
+        DataField = 'tomadorid'
+        DataSource = dsPolizas
+        KeyField = 'id'
+        ListField = 'nombrecompleto'
+        ListFieldIndex = 0
+        ListSource = dsClientes
+        LookupCache = False
+        TabOrder = 3
+      end
+      object dbeCompaniaId: TDBEdit
+        Left = 152
+        Height = 23
+        Top = 77
+        Width = 48
+        DataField = 'companiaid'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 4
+      end
+      object dblcTomador1: TDBLookupComboBox
+        Left = 208
+        Height = 23
+        Top = 77
+        Width = 284
+        DataField = 'companiaid'
+        DataSource = dsPolizas
+        KeyField = 'id'
+        ListField = 'nombre'
+        ListFieldIndex = 0
+        ListSource = dsCompanias
+        LookupCache = False
+        TabOrder = 5
+      end
+      object dbeRamo: TDBEdit
+        Left = 152
+        Height = 23
+        Top = 104
+        Width = 48
+        DataField = 'ramoid'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 6
+      end
+      object dblcRamo: TDBLookupComboBox
+        Left = 208
+        Height = 23
+        Top = 104
+        Width = 284
+        DataField = 'ramoid'
+        DataSource = dsPolizas
+        KeyField = 'id'
+        ListField = 'nombre'
+        ListFieldIndex = 0
+        ListSource = dsRamos
+        LookupCache = False
+        TabOrder = 7
+      end
+      object dbeColaborador: TDBEdit
+        Left = 152
+        Height = 23
+        Top = 132
+        Width = 48
+        DataField = 'colaboradorid'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 8
+      end
+      object dblcColaborador: TDBLookupComboBox
+        Left = 208
+        Height = 23
+        Top = 132
+        Width = 284
+        DataField = 'colaboradorid'
+        DataSource = dsPolizas
+        KeyField = 'id'
+        ListField = 'nombre'
+        ListFieldIndex = 0
+        ListSource = dsColaboradores
+        LookupCache = False
+        TabOrder = 9
+      end
+      object dbeColaborador1: TDBEdit
+        Left = 152
+        Height = 23
+        Top = 160
+        Width = 48
+        DataField = 'formadepagoid'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 10
+      end
+      object dblcFormaDePago: TDBLookupComboBox
+        Left = 208
+        Height = 23
+        Top = 160
+        Width = 284
+        DataField = 'formadepagoid'
+        DataSource = dsPolizas
+        KeyField = 'id'
+        ListField = 'nombre'
+        ListFieldIndex = 0
+        ListSource = dsFormasdePago
+        LookupCache = False
+        TabOrder = 11
+      end
+      object dbeDomicilioCobro: TDBEdit
+        Left = 152
+        Height = 23
+        Top = 188
+        Width = 340
+        DataField = 'domiciliocobro'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 12
+      end
+      object dbrgEnVigor: TDBRadioGroup
+        Left = 152
+        Height = 38
+        Top = 229
+        Width = 105
+        AutoFill = True
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        Columns = 2
+        DataField = 'envigor'
+        DataSource = dsPolizas
+        Items.Strings = (
+          'Sí'
+          'No'
+        )
+        TabOrder = 13
+        Values.Strings = (
+          'S'
+          'N'
+        )
+      end
+      object dbdeFechaAnulacion: TDBDateEdit
+        Left = 152
+        Height = 23
+        Top = 272
+        Width = 112
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        DateOrder = doNone
+        ButtonWidth = 27
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 14
+        DataField = 'fechaanulacion'
+        DataSource = dsPolizas
+      end
+      object dbrgMotivoAnulacion: TDBRadioGroup
+        Left = 152
+        Height = 105
+        Top = 296
+        Width = 340
+        AutoFill = True
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        Columns = 2
+        DataField = 'motivoanulacion'
+        DataSource = dsPolizas
+        Items.Strings = (
+          'Impago'
+          'Competencia / Precio'
+          'Venta / Desaparición del Riesgo'
+          'Reemplazo'
+          'Conflicto con Agencia'
+          'Conflicto con Oficina'
+          'Depuración de Cartera'
+          'Otros'
+        )
+        TabOrder = 15
+        Values.Strings = (
+          'I'
+          'P'
+          'V'
+          'R'
+          'A'
+          'C'
+          'D'
+          'O'
+        )
+      end
     end
     object tsObservaciones: TTabSheet
       Caption = 'Observaciones'
@@ -130,6 +367,16 @@ inherited formPolizas: TformPolizas
         Width = 80
         Caption = 'Observaciones:'
         ParentColor = False
+      end
+      object dbmObservaciones: TDBMemo
+        Left = 120
+        Height = 386
+        Top = 24
+        Width = 606
+        DataField = 'observaciones'
+        DataSource = dsPolizas
+        ScrollBars = ssAutoVertical
+        TabOrder = 0
       end
     end
     object tsVehiculo: TTabSheet
@@ -208,6 +455,104 @@ inherited formPolizas: TformPolizas
         Caption = 'Coberturas:'
         ParentColor = False
       end
+      object dbeAutosMatricula: TDBEdit
+        Left = 160
+        Height = 23
+        Top = 19
+        Width = 84
+        DataField = 'automatricula'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object dbeAutosUso: TDBEdit
+        Left = 160
+        Height = 23
+        Top = 47
+        Width = 204
+        DataField = 'autouso'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object dbeAutosMarcaModelo: TDBEdit
+        Left = 160
+        Height = 23
+        Top = 75
+        Width = 488
+        DataField = 'automarcamodelo'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object dbeAutosPropietario: TDBEdit
+        Left = 160
+        Height = 23
+        Top = 104
+        Width = 488
+        DataField = 'autopropietario'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 3
+      end
+      object dbeAutosConductor: TDBEdit
+        Left = 160
+        Height = 23
+        Top = 132
+        Width = 488
+        DataField = 'autoconductor'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 4
+      end
+      object dbeAutosConductor1: TDBEdit
+        Left = 160
+        Height = 23
+        Top = 160
+        Width = 104
+        DataField = 'autonifconductor'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 5
+      end
+      object dbdeFNCond: TDBDateEdit
+        Left = 160
+        Height = 23
+        Top = 188
+        Width = 112
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        DateOrder = doNone
+        ButtonWidth = 27
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 6
+        DataField = 'autonacimconductor'
+        DataSource = dsPolizas
+      end
+      object dbdeFCCond: TDBDateEdit
+        Left = 160
+        Height = 23
+        Top = 216
+        Width = 112
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        DateOrder = doNone
+        ButtonWidth = 27
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 7
+        DataField = 'autocarnetconductor'
+        DataSource = dsPolizas
+      end
+      object dbeCoberturas: TDBEdit
+        Left = 160
+        Height = 23
+        Top = 244
+        Width = 488
+        DataField = 'autocoberturas'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 8
+      end
     end
     object tsDiversos: TTabSheet
       Caption = 'Diversos'
@@ -229,6 +574,26 @@ inherited formPolizas: TformPolizas
         Caption = 'Capitales:'
         ParentColor = False
       end
+      object dbeDiverSitRiesgo: TDBEdit
+        Left = 152
+        Height = 23
+        Top = 20
+        Width = 488
+        DataField = 'diversosriesgo'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object dbmDiverCapitales: TDBMemo
+        Left = 152
+        Height = 322
+        Top = 48
+        Width = 486
+        DataField = 'diversoscapitales'
+        DataSource = dsPolizas
+        ScrollBars = ssAutoVertical
+        TabOrder = 1
+      end
     end
     object tsVidaRiesgo: TTabSheet
       Caption = 'Vida/Riesgo'
@@ -249,6 +614,26 @@ inherited formPolizas: TformPolizas
         Width = 98
         Caption = 'Riesgo Asegurado:'
         ParentColor = False
+      end
+      object dbmVidaCapitales: TDBMemo
+        Left = 136
+        Height = 322
+        Top = 48
+        Width = 486
+        DataField = 'vidacapitales'
+        DataSource = dsPolizas
+        ScrollBars = ssAutoVertical
+        TabOrder = 0
+      end
+      object dbeVidaRiesgo: TDBEdit
+        Left = 136
+        Height = 23
+        Top = 20
+        Width = 488
+        DataField = 'vidaasegurado'
+        DataSource = dsPolizas
+        MaxLength = 0
+        TabOrder = 1
       end
     end
     object tsControl: TTabSheet
@@ -358,6 +743,18 @@ inherited formPolizas: TformPolizas
     end
     object tsFiltro: TTabSheet
       Caption = 'Filtro'
+      ClientHeight = 420
+      ClientWidth = 736
+      object DBGrid1: TDBGrid
+        Left = 24
+        Height = 320
+        Top = 96
+        Width = 704
+        Color = clWindow
+        Columns = <>
+        DataSource = dsPolizas
+        TabOrder = 0
+      end
     end
   end
   object Label1: TLabel[2]
@@ -368,8 +765,19 @@ inherited formPolizas: TformPolizas
     Caption = 'Póliza:'
     ParentColor = False
   end
-  object dbPolizas: TZQuery[3]
+  object dbePoliza: TDBEdit[3]
+    Left = 64
+    Height = 23
+    Top = 48
+    Width = 184
+    DataField = 'poliza'
+    DataSource = dsPolizas
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object dbPolizas: TZQuery[4]
     Connection = formPrincipal.ZConnection1
+    OnNewRecord = dbPolizasNewRecord
     SQL.Strings = (
       'SELECT * FROM polizas ORDER BY efecto'
     )
@@ -418,7 +826,7 @@ inherited formPolizas: TformPolizas
       Index = 4
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
+      ReadOnly = False
       Required = False
     end
     object dbPolizascompaniaid: TLongintField
@@ -427,7 +835,7 @@ inherited formPolizas: TformPolizas
       Index = 5
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
+      ReadOnly = False
       Required = False
     end
     object dbPolizasramoid: TLongintField
@@ -436,7 +844,7 @@ inherited formPolizas: TformPolizas
       Index = 6
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
+      ReadOnly = False
       Required = False
     end
     object dbPolizascolaboradorid: TLongintField
@@ -445,7 +853,7 @@ inherited formPolizas: TformPolizas
       Index = 7
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
+      ReadOnly = False
       Required = False
     end
     object dbPolizasformadepagoid: TLongintField
@@ -538,7 +946,7 @@ inherited formPolizas: TformPolizas
       Required = False
       Size = 15
     end
-    object dbPolizasautonacimconductor: TStringField
+    object dbPolizasautonacimconductor: TDateField
       FieldKind = fkData
       FieldName = 'autonacimconductor'
       Index = 17
@@ -546,9 +954,8 @@ inherited formPolizas: TformPolizas
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 15
     end
-    object dbPolizasautocarnetconductor: TStringField
+    object dbPolizasautocarnetconductor: TDateField
       FieldKind = fkData
       FieldName = 'autocarnetconductor'
       Index = 18
@@ -556,7 +963,6 @@ inherited formPolizas: TformPolizas
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 15
     end
     object dbPolizasautocoberturas: TStringField
       FieldKind = fkData
@@ -678,34 +1084,129 @@ inherited formPolizas: TformPolizas
       Size = 25
     end
   end
-  object dbClientes: TZQuery[4]
+  object dbClientes: TZQuery[5]
     Connection = formPrincipal.ZConnection1
+    OnCalcFields = dbClientesCalcFields
     SQL.Strings = (
-      'SELECT * FROM clientes ORDER BY id'
+      'SELECT * FROM clientes ORDER BY apellido1,apellido2,nombre'
     )
     Params = <>
     Left = 538
     Top = 128
+    object dbClientesid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object dbClientesidentificador: TStringField
+      FieldKind = fkData
+      FieldName = 'identificador'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object dbClientesnombre: TStringField
+      FieldKind = fkData
+      FieldName = 'nombre'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesapellido1: TStringField
+      FieldKind = fkData
+      FieldName = 'apellido1'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesapellido2: TStringField
+      FieldKind = fkData
+      FieldName = 'apellido2'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object dbClientesnombrecompleto: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'nombrecompleto'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
   end
-  object dbCompanias: TZQuery[5]
+  object dbCompanias: TZQuery[6]
     Connection = formPrincipal.ZConnection1
     SQL.Strings = (
-      'SELECT * FROM companias ORDER BY id'
+      'SELECT * FROM companias ORDER BY nombre'
     )
     Params = <>
     Left = 538
     Top = 192
+    object dbCompaniasid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object dbCompaniasnombre: TStringField
+      FieldKind = fkData
+      FieldName = 'nombre'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
   end
-  object dbRamos: TZQuery[6]
+  object dbRamos: TZQuery[7]
     Connection = formPrincipal.ZConnection1
     SQL.Strings = (
-      'SELECT * FROM ramos ORDER BY id'
+      'SELECT * FROM ramos ORDER BY nombre'
     )
     Params = <>
     Left = 538
     Top = 256
+    object dbRamosid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object dbRamosnombre: TStringField
+      FieldKind = fkData
+      FieldName = 'nombre'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 35
+    end
   end
-  object dbColaboradores: TZQuery[7]
+  object dbColaboradores: TZQuery[8]
     Connection = formPrincipal.ZConnection1
     SQL.Strings = (
       'SELECT * FROM colaboradores ORDER BY id'
@@ -714,7 +1215,7 @@ inherited formPolizas: TformPolizas
     Left = 538
     Top = 316
   end
-  object dbFormasdePago: TZQuery[8]
+  object dbFormasdePago: TZQuery[9]
     Connection = formPrincipal.ZConnection1
     SQL.Strings = (
       'SELECT * FROM formasdepago ORDER BY id'
@@ -723,32 +1224,32 @@ inherited formPolizas: TformPolizas
     Left = 538
     Top = 371
   end
-  object dsPolizas: TDataSource[9]
+  object dsPolizas: TDataSource[10]
     DataSet = dbPolizas
     Left = 632
     Top = 68
   end
-  object dsClientes: TDataSource[10]
+  object dsClientes: TDataSource[11]
     DataSet = dbClientes
     Left = 632
     Top = 128
   end
-  object dsCompanias: TDataSource[11]
+  object dsCompanias: TDataSource[12]
     DataSet = dbCompanias
     Left = 632
     Top = 192
   end
-  object dsRamos: TDataSource[12]
+  object dsRamos: TDataSource[13]
     DataSet = dbRamos
     Left = 632
     Top = 256
   end
-  object dsColaboradores: TDataSource[13]
+  object dsColaboradores: TDataSource[14]
     DataSet = dbColaboradores
     Left = 632
     Top = 316
   end
-  object dsFormasdePago: TDataSource[14]
+  object dsFormasdePago: TDataSource[15]
     DataSet = dbFormasdePago
     Left = 632
     Top = 371

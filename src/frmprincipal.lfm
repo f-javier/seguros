@@ -156,6 +156,7 @@ object formPrincipal: TformPrincipal
       'controls_cp=CP_UTF8'
     )
     TransactIsolationLevel = tiReadCommitted
+    Connected = True
     AfterConnect = ZConnection1AfterConnect
     AfterDisconnect = ZConnection1AfterDisconnect
     HostName = '127.0.0.1'
@@ -164,7 +165,8 @@ object formPrincipal: TformPrincipal
     User = 'seguros'
     Password = 'seguros'
     Protocol = 'mysql-5'
-    Left = 431
-    Top = 145
+    LibraryLocation = 'C:\DesarrolloLazarus\SegurosMIT\src\bin\libmariadb.dll'
+    Left = 432
+    Top = 144
   end
 end

@@ -6,17 +6,61 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
-  DBCtrls, frmPadre, DB, ZDataset;
+  DBCtrls, DBExtCtrls, DBGrids, frmPadre, DB, ZDataset, Types;
 
 type
 
   { TformPolizas }
 
   TformPolizas = class(TformPadre)
+    dbClientesapellido1: TStringField;
+    dbClientesapellido2: TStringField;
+    dbClientesid: TLongintField;
+    dbClientesidentificador: TStringField;
+    dbClientesnombre: TStringField;
+    dbClientesnombrecompleto: TStringField;
+    dbCompaniasid: TLongintField;
+    dbCompaniasnombre: TStringField;
+    dbdeEfecto: TDBDateEdit;
+    dbdeFNCond: TDBDateEdit;
+    dbdeFechaAnulacion: TDBDateEdit;
+    dbdeFCCond: TDBDateEdit;
+    dbdeVencimiento: TDBDateEdit;
+    dbeAutosConductor1: TDBEdit;
+    dbeDiverSitRiesgo: TDBEdit;
+    dbeCoberturas: TDBEdit;
+    dbeAutosPropietario: TDBEdit;
+    dbeAutosConductor: TDBEdit;
+    dbeAutosUso: TDBEdit;
+    dbeAutosMarcaModelo: TDBEdit;
+    dbeColaborador1: TDBEdit;
+    dbeVidaRiesgo: TDBEdit;
+    dbeDomicilioCobro: TDBEdit;
+    dbeAutosMatricula: TDBEdit;
+    dbeRamo: TDBEdit;
+    dbeColaborador: TDBEdit;
+    dbeTomadorId: TDBEdit;
+    dbeCompaniaId: TDBEdit;
+    dbePoliza: TDBEdit;
     DBEdit5: TDBEdit;
     DBEdit6: TDBEdit;
     DBEdit7: TDBEdit;
     DBEdit8: TDBEdit;
+    DBGrid1: TDBGrid;
+    dblcColaborador: TDBLookupComboBox;
+    dblcFormaDePago: TDBLookupComboBox;
+    dblcTomador: TDBLookupComboBox;
+    dblcTomador1: TDBLookupComboBox;
+    dblcRamo: TDBLookupComboBox;
+    dbmVidaCapitales: TDBMemo;
+    dbmObservaciones: TDBMemo;
+    dbmDiverCapitales: TDBMemo;
+    dbPolizasautocarnetconductor: TDateField;
+    dbPolizasautonacimconductor: TDateField;
+    dbrgMotivoAnulacion: TDBRadioGroup;
+    dbrgEnVigor: TDBRadioGroup;
+    dbRamosid: TLongintField;
+    dbRamosnombre: TStringField;
     dsFormasdePago: TDataSource;
     dsColaboradores: TDataSource;
     dsRamos: TDataSource;
@@ -24,12 +68,10 @@ type
     dsClientes: TDataSource;
     dsPolizas: TDataSource;
     dbPolizas: TZQuery;
-    dbPolizasautocarnetconductor: TStringField;
     dbPolizasautocoberturas: TStringField;
     dbPolizasautoconductor: TStringField;
     dbPolizasautomarcamodelo: TStringField;
     dbPolizasautomatricula: TStringField;
-    dbPolizasautonacimconductor: TStringField;
     dbPolizasautonifconductor: TStringField;
     dbPolizasautopropietario: TStringField;
     dbPolizasautouso: TStringField;
@@ -100,6 +142,8 @@ type
     tsDiversos: TTabSheet;
     tsVehiculo: TTabSheet;
     tsDatos: TTabSheet;
+    procedure dbClientesCalcFields(DataSet: TDataSet);
+    procedure dbPolizasNewRecord(DataSet: TDataSet);
     procedure FormCreate(Sender: TObject);
   private
 
@@ -120,6 +164,18 @@ procedure TformPolizas.FormCreate(Sender: TObject);
 begin
   inherited;
   pc.ActivePage:=tsDatos;
+end;
+
+procedure TformPolizas.dbClientesCalcFields(DataSet: TDataSet);
+begin
+  dbClientesnombrecompleto.Value := dbClientesapellido1.AsString + ' ' +
+                                   dbClientesapellido2.AsString + ', ' +
+                                   dbClientesnombre.AsString;
+end;
+
+procedure TformPolizas.dbPolizasNewRecord(DataSet: TDataSet);
+begin
+  dbPolizasenvigor.Value := 'S';
 end;
 
 end.
